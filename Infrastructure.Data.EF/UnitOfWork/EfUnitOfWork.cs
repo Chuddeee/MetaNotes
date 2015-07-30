@@ -12,7 +12,6 @@ namespace Infrastructure.Data.EF
     internal sealed class EfUnitOfWork : IUnitOfWork
     {
         private readonly DbContext _dbContext;
-        private DbContextTransaction _transaction;
         private bool _disposed = false;
 
         public EfUnitOfWork(DbContext context)

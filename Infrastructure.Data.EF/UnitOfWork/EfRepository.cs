@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Configuration")]
+[assembly: InternalsVisibleTo("MetaNotes")]
 
 namespace Infrastructure.Data.EF
 {

@@ -20,7 +20,7 @@ namespace Domain.Entities
 
         /// <summary>Id пользователя, который изменил заметку</summary>
         [Column("Changed_by")]
-        [ForeignKey("ChangedBy")]
+        [ForeignKey("ChangedByUser")]
         public Guid? ChangedByUserId { get; set; }
 
 
@@ -56,7 +56,7 @@ namespace Domain.Entities
         public virtual User Owner { get; set; }
 
         /// <summary>Пользователь, который в последний раз менял заметку</summary>
-        public virtual User ChangedBy { get; set; }
+        public virtual User ChangedByUser { get; set; }
 
         #endregion
 

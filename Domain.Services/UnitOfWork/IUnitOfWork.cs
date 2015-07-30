@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Domain.Services.UnitOfWork
+namespace Domain.Services
 {
     public interface IUnitOfWork : IDisposable
     {
@@ -13,11 +13,5 @@ namespace Domain.Services.UnitOfWork
         void SaveChanges();
 
         Task SaveChangesAsync();
-
-        void BeginTransaction();
-
-        void RollBackTransaction();
-
-        void CommitTransaction();
     }
 }

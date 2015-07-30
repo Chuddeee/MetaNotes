@@ -13,6 +13,7 @@ namespace MetaNotes
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MetaNotesContext, MetaNotesEfConfiguration>());
+            DependencyResolverConfig.Configure();
         }
     }
 }

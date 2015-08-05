@@ -1,6 +1,4 @@
-﻿using Infrastructure.Data.EF;
-using System.Data.Entity;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace MetaNotes
@@ -12,8 +10,8 @@ namespace MetaNotes
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MetaNotesContext, MetaNotesEfConfiguration>());
-            DependencyResolverConfig.Configure();
+            DependencyConfig.Configure();
+            DbConfig.Configure();
         }
     }
 }

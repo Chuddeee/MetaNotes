@@ -102,8 +102,8 @@
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\DependencyResolverConfig.cs" />
-    <Compile Include="Autofac\DomainServicesAutofacModule.cs" />
+    <Compile Include="App_Start\DbConfig.cs" />
+    <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -117,7 +117,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
@@ -129,21 +128,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business.Services\Business.Services.csproj">
-      <Project>{24c338b8-39b4-41be-9a7e-b52b227deee8}</Project>
-      <Name>Business.Services</Name>
+    <ProjectReference Include="..\MetaNotes.Infrastructure.Data.EF\MetaNotes.Infrastructure.Data.EF.csproj">
+      <Project>{7e2ba1e2-4ce0-4e42-be4a-8dd23f9885ea}</Project>
+      <Name>MetaNotes.Infrastructure.Data.EF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj">
-      <Project>{1ae70ac0-ab9a-4eb4-aaf8-63e0d8ad0457}</Project>
-      <Name>Domain.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Services\Domain.Services.csproj">
-      <Project>{e3aeb452-18a4-48b3-8431-552aa2db3d49}</Project>
-      <Name>Domain.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Infrastructure.Data.EF\Infrastructure.Data.EF.csproj">
-      <Project>{290d257c-61b7-45ba-aa7a-e678217ea624}</Project>
-      <Name>Infrastructure.Data.EF</Name>
+    <ProjectReference Include="..\MetaNotes.Infrastructure.DependencyResolution\MetaNotes.Infrastructure.DependencyResolution.csproj">
+      <Project>{773f1894-fe00-466f-aab1-3d5171169da8}</Project>
+      <Name>MetaNotes.Infrastructure.DependencyResolution</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

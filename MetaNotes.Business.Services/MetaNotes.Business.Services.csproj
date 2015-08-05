@@ -49,6 +49,10 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MetaNotes.Core.Entities\MetaNotes.Core.Entities.csproj">
+      <Project>{3e0f0133-b6a4-443e-9c73-cde870fecf27}</Project>
+      <Name>MetaNotes.Core.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetaNotes.Core.Services\MetaNotes.Core.Services.csproj">
       <Project>{5dc5239b-ab48-48f7-b07f-e4315d6fc025}</Project>
       <Name>MetaNotes.Core.Services</Name>

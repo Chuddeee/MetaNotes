@@ -8,8 +8,8 @@ namespace MetaNotes
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/main").Include(
-                        "~/Scripts/jquery/jquery*",
-                        "~/Scripts/bootstrap/bootstrap*"));
+                        "~/Scripts/jquery*",
+                        "~/Scripts/bootstrap*"));
 
             bundles.Add(new StyleBundle("~/bundles/styles/main").Include(
                 "~/Content/Styles/bootstrap/bootstrap*"));

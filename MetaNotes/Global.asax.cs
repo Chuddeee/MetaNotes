@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace MetaNotes
@@ -9,7 +10,7 @@ namespace MetaNotes
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
             DependencyConfig.Configure();
             DbConfig.Configure();
         }

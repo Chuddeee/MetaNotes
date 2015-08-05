@@ -7,7 +7,7 @@ namespace MetaNotes.Controllers
     public class LoginController : Controller
     {
         [HttpGet] 
-        public async Task<ActionResult> SignIn()
+        public async Task<ActionResult> Index()
         {
             return View();
         }

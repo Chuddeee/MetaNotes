@@ -105,21 +105,35 @@
     <Compile Include="App_Start\DbConfig.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LogsController.cs" />
+    <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Views\Logs\" />
+    <Folder Include="Views\Notes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Login\Login.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -135,6 +149,14 @@
     <ProjectReference Include="..\MetaNotes.Infrastructure.DependencyResolution\MetaNotes.Infrastructure.DependencyResolution.csproj">
       <Project>{773f1894-fe00-466f-aab1-3d5171169da8}</Project>
       <Name>MetaNotes.Infrastructure.DependencyResolution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.UI.Model\MetaNotes.UI.Model.csproj">
+      <Project>{2dfff27f-b7d2-4598-a890-4c6701204bd8}</Project>
+      <Name>MetaNotes.UI.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.UI.Services\MetaNotes.UI.Services.csproj">
+      <Project>{b9497ed2-8086-47c1-b897-ae1fc601aa3d}</Project>
+      <Name>MetaNotes.UI.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

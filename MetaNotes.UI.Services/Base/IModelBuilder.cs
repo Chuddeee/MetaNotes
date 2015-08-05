@@ -8,7 +8,6 @@ namespace MetaNotes.UI.Services
     /// <typeparam name="TArguments">Тип входных параметров</typeparam>
     public interface IModelBuilder<TModel, TArguments>
         where TModel : IViewModel
-        where TArguments : IModelBuilderArguments
     {
         /// <summary>Строит модель</summary>
         Task<TModel> Build(TArguments arguments);

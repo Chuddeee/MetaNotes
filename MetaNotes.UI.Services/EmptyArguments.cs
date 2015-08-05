@@ -1,7 +1,7 @@
 ﻿namespace Ekleft.VendingMachine.UI.Services
 {
     /// <summary>Пустые аргументы для модел билдера (когда не нужны аргументы)</summary>
-    public sealed class EmptyArguments : IModelBuilderArguments
+    public sealed class EmptyArguments
     {
         private static readonly EmptyArguments _instance = new EmptyArguments();
 

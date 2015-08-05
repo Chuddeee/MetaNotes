@@ -39,9 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arguments\EmptyArguments.cs" />
+    <Compile Include="EmptyArguments.cs" />
     <Compile Include="Base\IModelBuilder.cs" />
-    <Compile Include="Base\IModelBuilderArguments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

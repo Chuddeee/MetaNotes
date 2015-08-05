@@ -13,7 +13,7 @@ namespace MetaNotes.Business.Services.Commands.Base
         protected BaseCommand(IUnitOfWork uow)
         {
             if (uow == null)
-                throw new ArgumentNullException("uow");
+                throw new ArgumentNullException("uow", "uow is null");
 
             _uow = uow;
         }

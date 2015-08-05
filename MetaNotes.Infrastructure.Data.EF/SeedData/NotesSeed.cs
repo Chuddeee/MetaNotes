@@ -13,13 +13,13 @@ namespace MetaNotes.Infrastructure.Data.EF
         {
             var result = new List<Note>();
 
-            for (int i = 0; i < 100; i++)
-            {
-                var creatingDate = DateTime.UtcNow;
+            var utc = DateTime.UtcNow;
 
+            for (int i = 0; i < 100; i++)
+            {                
                 var note = new Note()
                 {
-                    CreatingDate = creatingDate.AddMinutes(-i),        
+                    CreatingDate = utc.AddMinutes(-i),        
                     Body = _defaultBody,
                     Title = _defaultTitle
                 };

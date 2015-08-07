@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace MetaNotes.Extensions
 {
@@ -11,6 +7,23 @@ namespace MetaNotes.Extensions
         public static bool IsNullOrWhiteSpace(this string value)
         {
             return string.IsNullOrWhiteSpace(value);
+        }
+
+        public static bool IsNullOrEmpty(this string value)
+        {
+            return string.IsNullOrEmpty(value);
+        }
+
+        /// <summary>Приводит строку к нижнему регистру безопасным способом без вызова эксепшенов</summary>
+        public static string ToLowerSafely(this string value, CultureInfo info = null)
+        {
+            if (value.IsNullOrWhiteSpace())
+                return value;
+
+            if (info != null)
+                return value.ToLower(info);
+
+            return value.ToLower();
         }
     }
 }

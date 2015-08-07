@@ -8,7 +8,8 @@ namespace MetaNotes.Infrastructure.Data.EF
     internal static class UsersSeed
     {
         private const string _userLogin = "user";
-        private const string _defaultPassword = "123123";
+        //123123
+        private const string _defaultPassword = "4297F44B13955235245B2497399D7A93";
 
         internal static IEnumerable<User> GenerateUsers()
         {
@@ -16,14 +17,14 @@ namespace MetaNotes.Infrastructure.Data.EF
 
             for (int i = 1; i < 21; i++)
             {
-                var user = new User
+                result.Add(new User
                 {
                     Id = Guid.NewGuid(),
                     IsAdmin = i % 2 == 0,
                     Login = _userLogin + i,
                     Password = _defaultPassword,
                     UserNotes = new List<Note>()
-                };
+                });
             }
 
             return result;

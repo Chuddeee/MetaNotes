@@ -16,7 +16,7 @@ namespace MetaNotes
             app.UseCookieAuthentication(new CookieAuthenticationOptions
                 {
                     AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                    LoginPath = new PathString("/Login/Index"),
+                    LoginPath = new PathString("/Account/Index"),
                     ExpireTimeSpan = TimeSpan.FromMinutes(20)
                 });
         }

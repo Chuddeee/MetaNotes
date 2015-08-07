@@ -117,7 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="InvalidRequest" xml:space="preserve">
-    <value>Неверный запрос</value>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Логин</value>
+    <comment>текст поля для логина</comment>
+  </data>
+  <data name="Password_Title" xml:space="preserve">
+    <value>Пароль</value>
+    <comment>текст поля пароля</comment>
+  </data>
+  <data name="SignIn_Button" xml:space="preserve">
+    <value>Войти</value>
+    <comment>текст на кнопке входа</comment>
+  </data>
+  <data name="SignIn_Title" xml:space="preserve">
+    <value>Пожалуйста войдите</value>
+    <comment>Текст заголовка для формы входа</comment>
   </data>
 </root>

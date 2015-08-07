@@ -142,6 +142,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Styles\Account\AccountIndex.css" />
     <Content Include="Content\Styles\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\Styles\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\Styles\bootstrap\bootstrap.css" />
@@ -157,7 +158,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attributes\DenyAuthorizedAttribute.cs" />
     <Compile Include="Constants\UrlConstants.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\LogsController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -186,7 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
-    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Logs\Index.cshtml" />
     <Content Include="Views\Notes\Index.cshtml" />
     <Content Include="Views\Notes\Edit.cshtml" />
@@ -228,6 +229,10 @@
     <ProjectReference Include="..\MetaNotes.Infrastructure.DependencyResolution\MetaNotes.Infrastructure.DependencyResolution.csproj">
       <Project>{773f1894-fe00-466f-aab1-3d5171169da8}</Project>
       <Name>MetaNotes.Infrastructure.DependencyResolution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Internationalization\MetaNotes.Internationalization.csproj">
+      <Project>{01c9e4ef-7698-49e3-829a-b7e5d3fdbb60}</Project>
+      <Name>MetaNotes.Internationalization</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetaNotes.UI.Model\MetaNotes.UI.Model.csproj">
       <Project>{2dfff27f-b7d2-4598-a890-4c6701204bd8}</Project>

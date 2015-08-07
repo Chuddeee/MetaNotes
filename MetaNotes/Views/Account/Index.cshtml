@@ -1,0 +1,31 @@
+﻿@using MetaNotes.Internationalization.UI.Account
+@model SignInModel
+@{
+    ViewBag.Title = "Вход";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+@section Styles
+{
+    @Styles.Render("~/bundles/styles/account/index")
+}
+
+<form class="form-signin" action="@Url.Action("SignIn","Account")" method="post">
+    <h2 class="form-signin-heading">@AccountIndexUIResources.SignIn_Title</h2>
+    @Html.TextBoxFor(x => x.Login, new { 
+        @Class = "form-control", 
+        @Placeholder = AccountIndexUIResources.Login_Title,
+        @Autofocus = "autofocus"})
+    @Html.ValidationMessageFor(x=>x.Login)
+
+    @Html.PasswordFor(x => x.Password, new
+    {
+        @Class = "form-control",
+        @Placeholder = AccountIndexUIResources.Password_Title
+    })
+    @Html.ValidationMessageFor(x => x.Password)
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+        @AccountIndexUIResources.SignIn_Button
+    </button>
+</form>

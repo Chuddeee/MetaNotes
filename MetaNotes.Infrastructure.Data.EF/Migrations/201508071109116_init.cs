@@ -26,18 +26,18 @@ namespace MetaNotes.Infrastructure.Data.EF
                 .ForeignKey("dbo.Users", t => t.User_id)
                 .Index(t => t.User_id)
                 .Index(t => t.Changed_by);
-
+            
             CreateTable(
                 "dbo.Users",
                 c => new
                     {
                         Id = c.Guid(nullable: false),
                         Login = c.String(maxLength: 20),
-                        Password = c.String(),
+                        Password = c.String(maxLength: 4000),
                         IsAdmin = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .Index(x => x.Login, unique: true);            
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()

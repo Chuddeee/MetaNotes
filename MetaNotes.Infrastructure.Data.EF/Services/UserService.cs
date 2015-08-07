@@ -1,12 +1,11 @@
 ﻿using MetaNotes.Business.Services;
 using MetaNotes.Core.Entities;
 using MetaNotes.Core.Services;
+using MetaNotes.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MetaNotes.Infrastructure.Data.EF
 {
@@ -23,12 +22,20 @@ namespace MetaNotes.Infrastructure.Data.EF
                 .FirstOrDefaultAsync();
         }
 
+        /// <summary>Получает пользователя по логину и паролю. </summary>
+        /// <param name="login">логин пользователя</param>
+        /// <param name="passwordHash">хеш код пароля</param>
         public async Task<User> GetUser(string login, string passwordHash)
         {
+            if (login.IsNullOrWhiteSpace() || passwordHash.IsNullOrWhiteSpace())
+                return null;
+
+            var lowerLogin = login.ToLower();
             var repository = UnitOfWork.GetRepository<User>();
 
             return await repository.Select()
-                .Where(x => x.Login == login && x.Password == passwordHash)
+                .AsNoTracking()
+                .Where(x => x.Login.ToLower() == lowerLogin && x.Password == passwordHash)
                 .FirstOrDefaultAsync();
         }
     }

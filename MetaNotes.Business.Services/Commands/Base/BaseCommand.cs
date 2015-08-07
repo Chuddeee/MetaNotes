@@ -1,10 +1,12 @@
 ﻿using MetaNotes.Core.Services;
 using System;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace MetaNotes.Business.Services.Commands.Base
+[assembly: InternalsVisibleTo("MetaNotes.Infrastructure.DependencyResolution")]
+namespace MetaNotes.Business.Services
 {
-    public abstract class BaseCommand<TArguments, TResult> : ICommand<TArguments, TResult>
+    internal abstract class BaseCommand<TArguments, TResult> : ICommand<TArguments, TResult>
         where TArguments : ICommandArguments
         where TResult : ICommandResult
     {
@@ -23,7 +25,7 @@ namespace MetaNotes.Business.Services.Commands.Base
             get { return _uow; } 
         }
 
-        public async virtual Task<TResult> Execute(TArguments arguments)
+        public virtual async Task<TResult> Execute(TArguments arguments)
         {
             var validateResult = await Validate(arguments);
 

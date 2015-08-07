@@ -117,10 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>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</value>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Login</value>
+    <comment>текст поля для логина</comment>
   </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
+  <data name="Password_Title" xml:space="preserve">
+    <value>Password</value>
+    <comment>текст поля пароля</comment>
+  </data>
+  <data name="SignIn_Button" xml:space="preserve">
+    <value>Sign in</value>
+    <comment>текст на кнопке входа</comment>
+  </data>
+  <data name="SignIn_Title" xml:space="preserve">
+    <value>Please sign in</value>
+    <comment>Текст заголовка для формы входа</comment>
   </data>
 </root>

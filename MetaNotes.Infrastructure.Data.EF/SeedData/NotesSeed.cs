@@ -16,13 +16,13 @@ namespace MetaNotes.Infrastructure.Data.EF
             var utc = DateTime.UtcNow;
 
             for (int i = 0; i < 100; i++)
-            {                
-                var note = new Note()
+            {
+                result.Add(new Note()
                 {
-                    CreatingDate = utc.AddMinutes(-i),        
+                    CreatingDate = utc.AddMinutes(-i),
                     Body = _defaultBody,
                     Title = _defaultTitle
-                };
+                });
             }
 
             return result;

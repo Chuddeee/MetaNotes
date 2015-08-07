@@ -14,10 +14,7 @@ namespace MetaNotes.Infrastructure.Data.EF
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Sql ce если не указываешь длину строки максимальную или указываешь большую все равно делает 
-            //длину строки 4000. Чтобы все-таки создавал Nvarchar(max), надо у проперти указать .IsMaxLength()
-
-            modelBuilder.Entity<User>().Property(x => x.Password).IsMaxLength();
+            modelBuilder.Entity<User>().Property(x => x.Password);
 
             modelBuilder.Entity<User>()
                 .HasMany(x => x.UserNotes)

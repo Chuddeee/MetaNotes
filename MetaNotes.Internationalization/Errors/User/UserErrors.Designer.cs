@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MetaNotes.Internationalization.Errors.System {
+namespace MetaNotes.Internationalization.Errors.User {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MetaNotes.Internationalization.Errors.System {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class SystemErrors {
+    public class UserErrors {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal SystemErrors() {
+        internal UserErrors() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MetaNotes.Internationalization.Errors.System {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MetaNotes.Internationalization.Errors.System.SystemErrors", typeof(SystemErrors).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MetaNotes.Internationalization.Errors.User.UserErrors", typeof(UserErrors).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,11 @@ namespace MetaNotes.Internationalization.Errors.System {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid request.
+        ///   Looks up a localized string similar to Invalid login or password.
         /// </summary>
-        public static string InvalidRequest {
+        public static string InvalidLoginOrPassword {
             get {
-                return ResourceManager.GetString("InvalidRequest", resourceCulture);
+                return ResourceManager.GetString("InvalidLoginOrPassword", resourceCulture);
             }
         }
     }

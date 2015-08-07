@@ -11,6 +11,8 @@ namespace MetaNotes.Infrastructure.DependencyResolution
             builder.RegisterType<UserService>().As<IUserService>();
 
             builder.RegisterType<CryptographyUtility>().As<ICryptographyUtility>();
+
+            builder.RegisterType<FindUserCommand>().As<ICommand<FindUserArgs, FindUserResult>>();
         }
     }
 }

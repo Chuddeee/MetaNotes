@@ -13,6 +13,9 @@ namespace MetaNotes
 
             bundles.Add(new StyleBundle("~/bundles/styles/main").Include(
                 "~/Content/Styles/bootstrap/bootstrap*"));
+
+            bundles.Add(new StyleBundle("~/bundles/styles/account/index").Include(
+                "~/Content/Styles/Account/AccountIndex.css"));
         }
     }
 }

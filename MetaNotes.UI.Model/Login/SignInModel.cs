@@ -7,6 +7,8 @@ namespace MetaNotes.UI.Model
 {
     public class SignInModel
     {
-        public int A { get; set; }
+        public string Login { get; set; }
+
+        public string Password { get; set; }
     }
 }

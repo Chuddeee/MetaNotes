@@ -11,6 +11,8 @@ namespace MetaNotes
         {
             var builder = new ContainerBuilder();
             builder.RegisterModule(new InfrastructureDataModule());
+            builder.RegisterModule(new BusinessServicesModule());
+            builder.RegisterModule(new InfrastructureIdentityModule());
              
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 

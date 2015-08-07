@@ -3,6 +3,7 @@ using System.Web.Mvc;
 
 namespace MetaNotes.Controllers
 {
+    [Authorize]
     public class LogsController : Controller
     {
         [HttpGet]

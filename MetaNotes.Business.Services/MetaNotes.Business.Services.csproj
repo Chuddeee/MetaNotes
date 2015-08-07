@@ -44,10 +44,11 @@
     <Compile Include="Commands\Base\ICommandArguments.cs" />
     <Compile Include="Commands\Base\ICommandResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Utils\Base\ICryptographyUtility.cs" />
+    <Compile Include="Utils\Cryptography\CryptographyUtility.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MetaNotes.Core.Entities\MetaNotes.Core.Entities.csproj">
       <Project>{3e0f0133-b6a4-443e-9c73-cde870fecf27}</Project>

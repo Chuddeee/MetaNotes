@@ -1,6 +1,21 @@
-﻿@{
+﻿@model SignInModel
+@{
     ViewBag.Title = "Вход";
     Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
 }
 
-<div class="col-xs-6">Авторизация</div>
+<div class="col-xs-6">
+    <div class="panel panel-default">
+        <div class="panel-title">Форма аутентификации</div>
+
+        <div class="panel-body">
+            <form action="@Url.Action("SignIn","Login")" method="post">
+                @Html.LabelFor(x=>x.Login)
+                @Html.TextBoxFor(x=>x.Login)
+                @Html.LabelFor(x=>x.Password)
+                @Html.TextBoxFor(x=>x.Password)
+                <div><button type="submit">Войти</button></div>
+            </form>
+        </div>
+    </div> 
+</div>

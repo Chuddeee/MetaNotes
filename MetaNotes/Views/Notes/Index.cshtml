@@ -20,8 +20,7 @@
                 columns.Add(x => x.Title)
                     .Sortable(true)
                     .SetWidth(200)
-                    .Titled(NotesIndexUIResources.TitleColumn_Grid)
-                    .Sanitized(false);
+                    .Titled(NotesIndexUIResources.TitleColumn_Grid);
 
                 columns.Add(x => x.CreatingDate)
                     .Sortable(true)
@@ -36,6 +35,12 @@
                     .Sortable(true)
                     .Titled(NotesIndexUIResources.OwnerId_Grid)
                     .RenderValueAs(x => x.UserId.ToString());
+
+                columns.Add()
+                    .Sortable(false)
+                    .Encoded(false)
+                    .Sanitized(false)
+                    .RenderValueAs(x => @<a href="@Url.Action("Edit", "Notes", new { noteId = x.Id})">Подробнее</a>);
             }).WithPaging(20)
     </div>
 </div>

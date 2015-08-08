@@ -1,6 +1,41 @@
-﻿@{
+﻿@using GridMvc.Html
+@using MetaNotes.Internationalization.UI.Notes
+
+@model NotesIndexModel
+@{
     ViewBag.Title = "Заметки";
-    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+    Layout = "~/Views/Shared/Layouts/MainLayout.cshtml";
 }
 
 <div>Заметки</div>
+
+<div class="row" id="sanction-matches">
+    <div class="col-md-12">
+        @Html.Grid(Model.Data).Columns(columns =>
+            {
+                columns.Add(true)
+                    .Css("id-column")
+                    .RenderValueAs(x => x.Id.ToString());
+
+                columns.Add(x => x.Title)
+                    .Sortable(true)
+                    .SetWidth(200)
+                    .Titled(NotesIndexUIResources.TitleColumn_Grid)
+                    .Sanitized(false);
+
+                columns.Add(x => x.CreatingDate)
+                    .Sortable(true)
+                    .Titled(NotesIndexUIResources.CreatingDate_Grid)
+                    .RenderValueAs(x => { return x.CreatingDate.ToString() + " (UTC)"; });
+
+                columns.Add(x => x.IsPublic)
+                    .Titled(NotesIndexUIResources.IsPublic_Grid)
+                    .Sortable(true);
+
+                columns.Add(x => x.UserId)
+                    .Sortable(true)
+                    .Titled(NotesIndexUIResources.OwnerId_Grid)
+                    .RenderValueAs(x => x.UserId.ToString());
+            }).WithPaging(20)
+    </div>
+</div>

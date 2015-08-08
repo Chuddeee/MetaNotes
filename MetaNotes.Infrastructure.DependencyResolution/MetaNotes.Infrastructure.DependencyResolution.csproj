@@ -55,6 +55,7 @@
     <Compile Include="AutofacModules\BusinessServicesModule.cs" />
     <Compile Include="AutofacModules\InfrastructureDataModule.cs" />
     <Compile Include="AutofacModules\InfrastructureIdentityModule.cs" />
+    <Compile Include="AutofacModules\UIServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -66,7 +66,7 @@ namespace MetaNotes.Controllers
         }
 
         private async Task SignIn(string login, Guid userId)
-        {
+        {            
             var manager = HttpContext.GetOwinContext().Authentication;
             manager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
 

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,11 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelBuilders\EmptyArguments.cs" />
-    <Compile Include="ModelBuilders\Base\IModelBuilder.cs" />
+    <Compile Include="ModelBuilders\Notes\NotesIndexModelBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MetaNotes.Business.Services\MetaNotes.Business.Services.csproj">
+      <Project>{48d0ebef-90f1-49ef-b459-e65b8379ff2d}</Project>
+      <Name>MetaNotes.Business.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Core.Entities\MetaNotes.Core.Entities.csproj">
+      <Project>{3e0f0133-b6a4-443e-9c73-cde870fecf27}</Project>
+      <Name>MetaNotes.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Core.Services\MetaNotes.Core.Services.csproj">
+      <Project>{5dc5239b-ab48-48f7-b07f-e4315d6fc025}</Project>
+      <Name>MetaNotes.Core.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Internationalization\MetaNotes.Internationalization.csproj">
+      <Project>{01c9e4ef-7698-49e3-829a-b7e5d3fdbb60}</Project>
+      <Name>MetaNotes.Internationalization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetaNotes.UI.Model\MetaNotes.UI.Model.csproj">
       <Project>{2dfff27f-b7d2-4598-a890-4c6701204bd8}</Project>
       <Name>MetaNotes.UI.Model</Name>

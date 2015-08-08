@@ -40,6 +40,9 @@ namespace MetaNotes.Core.Entities
         /// <summary>Удалена ли заметка</summary>
         public bool IsDeleted { get; set; }
 
+        /// <summary>Является ли заметка общедоступной</summary>
+        public bool IsPublic { get; set; }
+
         /// <summary>Заголовок заметки</summary>
         [MaxLength(TitleMaxLength)]
         public string Title { get; set; }

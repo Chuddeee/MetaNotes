@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\NotesQueryableExtensions.cs" />
     <Compile Include="Migrations\201508071109116_init.cs" />
     <Compile Include="Migrations\201508071109116_init.Designer.cs">
       <DependentUpon>201508071109116_init.cs</DependentUpon>
@@ -62,6 +63,7 @@
     <Compile Include="SeedData\NotesSeed.cs" />
     <Compile Include="SeedData\UsersSeed.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\NotesService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="UnitOfWork\EfRepository.cs" />
     <Compile Include="UnitOfWork\EfUnitOfWork.cs" />

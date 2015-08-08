@@ -4,7 +4,7 @@ using System.Web.Mvc;
 namespace MetaNotes.Controllers
 {
     [Authorize]
-    public class LogsController : Controller
+    public class LogsController : BaseController
     {
         [HttpGet]
         public async Task<ActionResult> Index()

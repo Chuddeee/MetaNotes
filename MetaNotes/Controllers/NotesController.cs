@@ -1,15 +1,19 @@
 ﻿using MetaNotes.UI.Model;
+using MetaNotes.UI.Services;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace MetaNotes.Controllers
 {
-    public class NotesController : Controller
+    [Authorize]
+    public class NotesController : BaseController
     {
         [HttpGet]
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(NotesFilterModel filter = null)
         {
-            return View();
+            var builder = DependencyResolver.Current.GetService<NotesIndexModelBuilder>();
+            var model = await builder.Build(UserId.Value, filter);
+            return View(model);
         }
 
         [HttpGet]

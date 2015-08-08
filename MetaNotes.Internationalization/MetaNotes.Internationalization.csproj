@@ -80,6 +80,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountIndexUIResources.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Notes\NotesIndexUIResources.ru.Designer.cs">
+      <DependentUpon>NotesIndexUIResources.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\Notes\NotesIndexUIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotesIndexUIResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Errors\Shared\SharedErrorsResources.ru.resx">
@@ -113,6 +123,14 @@
     <EmbeddedResource Include="UI\Account\AccountIndexUIResources.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountIndexUIResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Notes\NotesIndexUIResources.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotesIndexUIResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Notes\NotesIndexUIResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotesIndexUIResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

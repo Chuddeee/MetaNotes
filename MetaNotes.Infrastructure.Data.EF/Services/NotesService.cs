@@ -18,7 +18,7 @@ namespace MetaNotes.Infrastructure.Data.EF
                 .FilterByOwnerId(userId)
                 .FilterByIsPublic(isPublic)
                 .FilterByKeyPhrase(keyPhrase)
-                .OrderByDescending(x=>x.CreatingDate);                
+                .OrderByDescending(x => x.CreatingDate);
         }
     }
 }

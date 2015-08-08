@@ -129,13 +129,13 @@
     <value>Публичное</value>
     <comment>Текст столбца таблицы для колонки IsPublic</comment>
   </data>
-  <data name="OnlyMyNotes" xml:space="preserve">
-    <value>Только мои</value>
-    <comment>Значение для выпадающего списка типов записей</comment>
+  <data name="OnlyNotPublic" xml:space="preserve">
+    <value>Не публичные</value>
+    <comment>Значение для выпадающего списка публичности записей</comment>
   </data>
-  <data name="OnlyPublicNotes" xml:space="preserve">
-    <value>Только общедоступные</value>
-    <comment>Значение для выпадающего списка типов записей</comment>
+  <data name="OnlyPublic" xml:space="preserve">
+    <value>Публичные</value>
+    <comment>Значение для выпадающего списка публичности записей</comment>
   </data>
   <data name="OwnerId_Grid" xml:space="preserve">
     <value>Создатель</value>

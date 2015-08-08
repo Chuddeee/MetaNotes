@@ -7,7 +7,7 @@
     Layout = "~/Views/Shared/Layouts/MainLayout.cshtml";
 }
 
-<div>Заметки</div>
+@Html.Partial("~/Views/Notes/Partial/Filter.cshtml", Model)
 
 <div class="row" id="sanction-matches">
     <div class="col-md-12">

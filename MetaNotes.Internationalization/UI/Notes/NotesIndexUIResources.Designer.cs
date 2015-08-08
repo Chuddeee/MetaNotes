@@ -88,20 +88,20 @@ namespace MetaNotes.Internationalization.UI.Notes {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only my.
+        ///   Looks up a localized string similar to Not public.
         /// </summary>
-        public static string OnlyMyNotes {
+        public static string OnlyNotPublic {
             get {
-                return ResourceManager.GetString("OnlyMyNotes", resourceCulture);
+                return ResourceManager.GetString("OnlyNotPublic", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only public.
+        ///   Looks up a localized string similar to Public.
         /// </summary>
-        public static string OnlyPublicNotes {
+        public static string OnlyPublic {
             get {
-                return ResourceManager.GetString("OnlyPublicNotes", resourceCulture);
+                return ResourceManager.GetString("OnlyPublic", resourceCulture);
             }
         }
         

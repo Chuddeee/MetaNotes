@@ -206,6 +206,7 @@
     <Content Include="Views\Shared\Layouts\MainLayout.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\Notes\Partial\Filter.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

@@ -1,6 +1,7 @@
 ﻿using MetaNotes.Core.Entities;
 using System;
 using System.Linq;
+
 namespace MetaNotes.Business.Services
 {
     public interface INotesService

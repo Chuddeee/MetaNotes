@@ -23,23 +23,25 @@ namespace MetaNotes.UI.Services
 
         public async Task<NotesIndexModel> Build(Guid userId, NotesFilterModel arguments)
         {
-            IQueryable<Note> notes;
-            bool? isPublic = null;
-            Guid? userIdFilter = null;
-            var model = new NotesIndexModel { FilterModel = arguments };
+            if (arguments == null)
+                throw new ArgumentNullException();
 
             var user = await _userService.GetUser(userId);
             if (user == null)
                 throw new NullReferenceException("user not found");
 
-            model.IsAdmin = user.IsAdmin;
-            userIdFilter = user.IsAdmin ? userIdFilter : userId;
+            IQueryable<Note> notes;
+            Guid? userIdFilter = null;
+            var model = new NotesIndexModel 
+            { 
+                Filter = arguments,
+                IsAdmin = user.IsAdmin
+            };
 
-            if (arguments.Type.HasValue)
-                isPublic = arguments.Type == NotesTypeFilter.OnlyPublic ? true : false;
+            userIdFilter = user.IsAdmin ? userIdFilter : userId;          
 
             notes = _notesService
-                   .GetFilteredNotes(userIdFilter, isPublic, arguments.KeyPhrase);
+                   .GetFilteredNotes(userIdFilter, arguments.IsPublic, arguments.KeyPhrase);
 
             model.Data = notes.Select(x => new NoteTableModel
             {
@@ -52,7 +54,7 @@ namespace MetaNotes.UI.Services
 
             if (model.IsAdmin)
             {
-                model.NotesTypeItems = GetList();
+                model.PublicDropDownList = GetList();
             }
 
             return model;
@@ -66,17 +68,17 @@ namespace MetaNotes.UI.Services
                 {
                     Selected = true, 
                     Text = NotesIndexUIResources.AllNotes, 
-                    Value = NotesTypeFilter.All.ToString() 
+                    Value = null
                 },
                 new SelectListItem
                 {
-                    Text = NotesIndexUIResources.OnlyMyNotes, 
-                    Value = NotesTypeFilter.OnlyMy.ToString()
+                    Text = NotesIndexUIResources.OnlyPublic, 
+                    Value = true.ToString()
                 },
                 new SelectListItem
                 {
-                    Text = NotesIndexUIResources.OnlyPublicNotes, 
-                    Value = NotesTypeFilter.OnlyPublic.ToString()
+                    Text = NotesIndexUIResources.OnlyNotPublic, 
+                    Value = false.ToString()
                 }
             };
         }

@@ -119,7 +119,7 @@
   </resheader>
   <data name="AllNotes" xml:space="preserve">
     <value>All</value>
-    <comment>Значение для выпадающего списка типов записей</comment>
+    <comment>Значение для выпадающего списка публичности записей</comment>
   </data>
   <data name="CreatingDate_Grid" xml:space="preserve">
     <value>Creating date</value>
@@ -129,13 +129,13 @@
     <value>Is public</value>
     <comment>Текст столбца таблицы для колонки IsPublic</comment>
   </data>
-  <data name="OnlyMyNotes" xml:space="preserve">
-    <value>Only my</value>
-    <comment>Значение для выпадающего списка типов записей</comment>
+  <data name="OnlyNotPublic" xml:space="preserve">
+    <value>Not public</value>
+    <comment>Значение для выпадающего списка публичности записей</comment>
   </data>
-  <data name="OnlyPublicNotes" xml:space="preserve">
-    <value>Only public</value>
-    <comment>Значение для выпадающего списка типов записей</comment>
+  <data name="OnlyPublic" xml:space="preserve">
+    <value>Public</value>
+    <comment>Значение для выпадающего списка публичности записей</comment>
   </data>
   <data name="OwnerId_Grid" xml:space="preserve">
     <value>Owner id</value>

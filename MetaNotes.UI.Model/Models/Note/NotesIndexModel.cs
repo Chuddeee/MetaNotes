@@ -6,7 +6,9 @@ namespace MetaNotes.UI.Model
 {
     public class NotesIndexModel : IViewModel
     {
-        public NotesFilterModel FilterModel { get; set; }
+        //При переименовывании названия параметра также возможно надо будет 
+        //переименовать название переменной в контроллере
+        public NotesFilterModel Filter { get; set; }
 
         /// <summary>Набор данных для таблички</summary>
         public IQueryable<NoteTableModel> Data { get; set; }
@@ -15,6 +17,6 @@ namespace MetaNotes.UI.Model
         public bool IsAdmin { get; set; }
 
         /// <summary>Значения для комбобокса типа записей</summary>
-        public IEnumerable<SelectListItem> NotesTypeItems { get; set; }
+        public IEnumerable<SelectListItem> PublicDropDownList { get; set; }
     }
 }

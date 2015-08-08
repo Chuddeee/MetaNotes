@@ -1,13 +1,12 @@
 ﻿using MetaNotes.Business.Services;
+using MetaNotes.Core.Entities;
 using MetaNotes.Internationalization.UI.Notes;
 using MetaNotes.UI.Model;
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using System.Linq;
-using MetaNotes.Core.Entities;
 
 namespace MetaNotes.UI.Services
 {

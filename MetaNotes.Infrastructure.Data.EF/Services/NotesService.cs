@@ -17,7 +17,8 @@ namespace MetaNotes.Infrastructure.Data.EF
                 .NotDeleted()
                 .FilterByOwnerId(userId)
                 .FilterByIsPublic(isPublic)
-                .FilterByKeyPhrase(keyPhrase);                
+                .FilterByKeyPhrase(keyPhrase)
+                .OrderByDescending(x=>x.CreatingDate);                
         }
     }
 }

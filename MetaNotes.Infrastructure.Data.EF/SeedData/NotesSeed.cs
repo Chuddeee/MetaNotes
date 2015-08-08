@@ -21,7 +21,8 @@ namespace MetaNotes.Infrastructure.Data.EF
                 {
                     CreatingDate = utc.AddMinutes(-i),
                     Body = _defaultBody,
-                    Title = _defaultTitle
+                    Title = _defaultTitle,
+                    IsPublic = i % 2 == 0
                 });
             }
 

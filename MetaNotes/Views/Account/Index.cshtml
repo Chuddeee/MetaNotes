@@ -11,6 +11,8 @@
 }
 
 <form class="form-signin" action="@Url.Action("SignIn","Account")" method="post">
+    @Html.AntiForgeryToken()
+
     <h2 class="form-signin-heading">@AccountIndexUIResources.SignIn_Title</h2>
 
     @Html.TextBoxFor(x => x.Login, new { 

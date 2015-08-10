@@ -165,8 +165,6 @@
     <Compile Include="Authentication\ApplicationUser.cs" />
     <Compile Include="Authentication\UserManager.cs" />
     <Compile Include="Authentication\UserStore.cs" />
-    <Compile Include="Constants\KeysConstants.cs" />
-    <Compile Include="Constants\UrlConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\LogsController.cs" />

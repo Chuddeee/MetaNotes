@@ -33,7 +33,7 @@ namespace MetaNotes.Controllers
             return View(new SignInModel());
         }
 
-        [DenyAuthorized, HttpPost]
+        [DenyAuthorized, HttpPost, ValidateAntiForgeryToken]
         public async Task<ActionResult> SignIn(SignInModel request)
         {
             if (!ModelState.IsValid || request == null)

@@ -43,14 +43,6 @@ namespace MetaNotes.Core.Entities
         [NotMapped]
         public const int LoginMaxLength = 20;
 
-        /// <summary>Минимально допустимый размер пароля (именно пароля, а не хэша пароля)</summary>
-        [NotMapped]
-        public const int PasswordMinLength = 6;
-
-        /// <summary>Максимально допустимый размер пароля (именно пароля, а не хэша пароля)</summary>
-        [NotMapped]
-        public const int PasswordMaxLength = 30;
-
         #endregion
     }
 }

@@ -1,11 +1,12 @@
-﻿using MetaNotes.UI.Model;
+﻿using MetaNotes.Business.Services;
+using MetaNotes.Common;
+using MetaNotes.Internationalization.UI.Notes.Edit;
+using MetaNotes.UI.Model;
 using MetaNotes.UI.Services;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using MetaNotes.Business.Services;
-using MetaNotes.Internationalization.UI.Notes.Edit;
 
 namespace MetaNotes.Controllers
 {

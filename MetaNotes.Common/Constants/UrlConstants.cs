@@ -1,4 +1,4 @@
-﻿namespace MetaNotes.Constants
+﻿namespace MetaNotes.Common
 {
     public static class UrlConstants
     {

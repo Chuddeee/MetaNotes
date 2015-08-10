@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\KeysConstants.cs" />
+    <Compile Include="Constants\LengthConstants.cs" />
     <Compile Include="Constants\RegexConstants.cs" />
+    <Compile Include="Constants\UrlConstants.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -50,6 +50,14 @@
     <Compile Include="Models\Login\SignInModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MetaNotes.Common\MetaNotes.Common.csproj">
+      <Project>{4ca5e79b-e14e-43bf-859f-6c045117047d}</Project>
+      <Name>MetaNotes.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Core.Entities\MetaNotes.Core.Entities.csproj">
+      <Project>{3e0f0133-b6a4-443e-9c73-cde870fecf27}</Project>
+      <Name>MetaNotes.Core.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetaNotes.Internationalization\MetaNotes.Internationalization.csproj">
       <Project>{01c9e4ef-7698-49e3-829a-b7e5d3fdbb60}</Project>
       <Name>MetaNotes.Internationalization</Name>

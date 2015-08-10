@@ -39,6 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Errors\Account\AccountErrorsResources.ru.Designer.cs">
+      <DependentUpon>AccountErrorsResources.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Errors\Account\AccountErrorsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountErrorsResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Errors\Note\NoteErrors.ru.Designer.cs">
       <DependentUpon>NoteErrors.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -112,6 +122,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Errors\Account\AccountErrorsResources.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountErrorsResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Errors\Account\AccountErrorsResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountErrorsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Errors\Note\NoteErrors.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NoteErrors.ru.Designer.cs</LastGenOutput>

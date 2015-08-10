@@ -9,7 +9,13 @@
 
 @Html.Partial("~/Views/Notes/Partial/Filter.cshtml", Model)
 
-<div class="row" id="sanction-matches">
+<div>
+    <a href="@Url.Action("Edit","Notes")" class="btn btn-default" target="_blank">
+        <span class="glyphicon glyphicon-plus"></span>
+        @NotesIndexUIResources.AddButton
+    </a>
+</div>
+<div class="row">
     <div class="col-md-12">
         @Html.Grid(Model.Data).Columns(columns =>
             {

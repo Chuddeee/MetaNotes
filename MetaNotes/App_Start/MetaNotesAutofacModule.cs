@@ -12,6 +12,7 @@ namespace MetaNotes.App_Start
         {
             builder.RegisterType<NotesIndexModelBuilder>().AsSelf();
             builder.RegisterType<EditNoteModelBuilder>().AsSelf();
+            builder.RegisterType<SaveNoteModelBuilder>().AsSelf();
         }
     }
 }

@@ -48,6 +48,12 @@ namespace MetaNotes.Controllers
         [HttpPost]
         public async Task<ActionResult> Edit(EditNoteModel request)
         {
+            if (!ModelState.IsValid)
+            {
+                request.CanEdit = true;
+                return View(request);
+            }
+
             var builder = DependencyResolver.Current.GetService<SaveNoteModelBuilder>();
             var result = await builder.Build(UserId.Value, request);
 
@@ -75,14 +81,15 @@ namespace MetaNotes.Controllers
             };
 
             var result = await command.Execute(args);
+            var model = new AjaxResult() { IsSuccess = result.IsSuccess };
 
             if (result.IsSuccess)
             {
-                TempData[KeysConstants.SuccessMessageKey] = NotesEditUIResources.NoteSuccessDeleted;
+                model.Message = NotesEditUIResources.NoteSuccessDeleted;
             }
-            else TempData[KeysConstants.ErrorMessageKey] = result.ErrorMessage;
+            else model.Message = result.ErrorMessage;
 
-            return RedirectToAction("Index");
+            return Json(model);
         }
 	}
 }

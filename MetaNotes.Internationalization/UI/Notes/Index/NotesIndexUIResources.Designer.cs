@@ -61,6 +61,15 @@ namespace MetaNotes.Internationalization.UI.Notes.Index {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new note.
+        /// </summary>
+        public static string AddButton {
+            get {
+                return ResourceManager.GetString("AddButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string AllNotes {

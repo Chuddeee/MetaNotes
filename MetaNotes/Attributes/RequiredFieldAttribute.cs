@@ -10,6 +10,7 @@ namespace MetaNotes
         {
             ErrorMessageResourceName = "Required";
             ErrorMessageResourceType = typeof (SharedErrorsResources);
+            AllowEmptyStrings = false;
         } 
     }
 }

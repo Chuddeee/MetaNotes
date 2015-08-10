@@ -43,7 +43,6 @@ namespace MetaNotes
                 Title = note.Title,
                 NoteId = noteId,
                 CanEdit = canEdit,
-                CanDelete = canDelete
             };
 
             return model;

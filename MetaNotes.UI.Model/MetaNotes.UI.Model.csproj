@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\RequiredFieldAttribute.cs" />
-    <Compile Include="Models\Base\IViewModel.cs" />
     <Compile Include="Models\Note\EditNoteModel.cs" />
     <Compile Include="Models\Note\NotesFilterModel.cs" />
     <Compile Include="Models\Note\NotesIndexModel.cs" />

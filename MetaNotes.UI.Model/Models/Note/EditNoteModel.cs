@@ -1,6 +1,6 @@
 ﻿namespace MetaNotes.UI.Model
 {
-    public class EditNoteModel : IViewModel
+    public class EditNoteModel
     {
         public int? NoteId { get; set; }
 

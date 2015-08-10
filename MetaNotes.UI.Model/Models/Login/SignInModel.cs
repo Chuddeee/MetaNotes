@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MetaNotes.UI.Model
 {
-    public class SignInModel : IViewModel
+    public class SignInModel
     {
         [RequiredField]
         [Display(ResourceType = typeof(AccountIndexUIResources), Name = "Login_Title")]

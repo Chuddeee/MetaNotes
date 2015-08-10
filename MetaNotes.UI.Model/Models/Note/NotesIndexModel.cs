@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace MetaNotes.UI.Model
 {
-    public class NotesIndexModel : IViewModel
+    public class NotesIndexModel
     {
         //При переименовывании названия параметра также возможно надо будет 
         //переименовать название переменной в контроллере

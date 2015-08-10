@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace MetaNotes.Infrastructure.Authentication
+namespace MetaNotes
 {
     public class UserStore : IUserStore<ApplicationUser>
     {

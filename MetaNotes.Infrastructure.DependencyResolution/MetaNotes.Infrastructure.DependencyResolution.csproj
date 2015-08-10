@@ -55,7 +55,6 @@
   <ItemGroup>
     <Compile Include="AutofacModules\BusinessServicesModule.cs" />
     <Compile Include="AutofacModules\InfrastructureDataModule.cs" />
-    <Compile Include="AutofacModules\InfrastructureIdentityModule.cs" />
     <Compile Include="AutofacModules\ServicesModule.cs" />
     <Compile Include="AutofacModules\UIServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,10 +75,6 @@
     <ProjectReference Include="..\MetaNotes.Core.Services\MetaNotes.Core.Services.csproj">
       <Project>{5dc5239b-ab48-48f7-b07f-e4315d6fc025}</Project>
       <Name>MetaNotes.Core.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetaNotes.Infrastructure.Authentication\MetaNotes.Infrastructure.Authentication.csproj">
-      <Project>{95c6fc44-d88f-4b89-91d0-d3c6911d79cf}</Project>
-      <Name>MetaNotes.Infrastructure.Authentication</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetaNotes.Infrastructure.Data.EF\MetaNotes.Infrastructure.Data.EF.csproj">
       <Project>{7e2ba1e2-4ce0-4e42-be4a-8dd23f9885ea}</Project>

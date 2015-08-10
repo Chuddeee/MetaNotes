@@ -162,6 +162,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attributes\DenyAuthorizedAttribute.cs" />
+    <Compile Include="Authentication\ApplicationUser.cs" />
+    <Compile Include="Authentication\UserManager.cs" />
+    <Compile Include="Authentication\UserStore.cs" />
     <Compile Include="Constants\KeysConstants.cs" />
     <Compile Include="Constants\UrlConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -232,10 +235,6 @@
     <ProjectReference Include="..\MetaNotes.Extensions\MetaNotes.Extensions.csproj">
       <Project>{66958f3c-e891-436f-b51c-bc8bb31d2b9d}</Project>
       <Name>MetaNotes.Extensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetaNotes.Infrastructure.Authentication\MetaNotes.Infrastructure.Authentication.csproj">
-      <Project>{95c6fc44-d88f-4b89-91d0-d3c6911d79cf}</Project>
-      <Name>MetaNotes.Infrastructure.Authentication</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetaNotes.Infrastructure.Data.EF\MetaNotes.Infrastructure.Data.EF.csproj">
       <Project>{7e2ba1e2-4ce0-4e42-be4a-8dd23f9885ea}</Project>

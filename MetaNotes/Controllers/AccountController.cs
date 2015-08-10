@@ -1,6 +1,5 @@
 ﻿using MetaNotes.Attributes;
 using MetaNotes.Business.Services;
-using MetaNotes.Infrastructure.Authentication;
 using MetaNotes.UI.Model;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -15,13 +14,12 @@ namespace MetaNotes.Controllers
     {
         #region Поля, конструктор
 
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager = 
+            new UserManager<ApplicationUser>(new UserStore());
         private readonly ICommand<FindUserArgs, FindUserResult> _findUserCommand;
 
-        public AccountController(UserManager<ApplicationUser> userManager,
-            ICommand<FindUserArgs, FindUserResult> findUserCommand)
+        public AccountController(ICommand<FindUserArgs, FindUserResult> findUserCommand)
         {
-            _userManager = userManager;
             _findUserCommand = findUserCommand;
         }
 

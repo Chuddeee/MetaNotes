@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 
-namespace MetaNotes.Infrastructure.Authentication
+namespace MetaNotes
 {
     public class UserManager : UserManager<ApplicationUser>
     {

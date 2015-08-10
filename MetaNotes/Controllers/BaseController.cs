@@ -1,11 +1,5 @@
-﻿using MetaNotes.Attributes;
-using MetaNotes.Business.Services;
-using MetaNotes.Infrastructure.Authentication;
-using MetaNotes.UI.Model;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
+﻿using Microsoft.AspNet.Identity;
 using System;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 

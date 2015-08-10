@@ -4,12 +4,11 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
 
 namespace MetaNotes.Infrastructure.Data.EF
 {
     /// <summary>Реализация репозитория для EF</summary>
-    public sealed class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
+    internal sealed class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
     {
         private readonly DbContext _dbContext;
         private DbSet<TEntity> _dbSet;

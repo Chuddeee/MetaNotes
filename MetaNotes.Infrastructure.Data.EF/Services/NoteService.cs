@@ -1,5 +1,4 @@
-﻿using MetaNotes.Business.Services;
-using MetaNotes.Core.Entities;
+﻿using MetaNotes.Core.Entities;
 using MetaNotes.Core.Services;
 using System;
 using System.Data.Entity;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Infrastructure.Data.EF
 {
-    public class NoteService : BaseService, INoteService
+    internal class NoteService : BaseService, INoteService
     {
         public NoteService(IUnitOfWork uow) : base(uow) { }
 
@@ -26,7 +25,8 @@ namespace MetaNotes.Infrastructure.Data.EF
         public Task<Note> GetNote(int id)
         {
             var repository = UnitOfWork.GetRepository<Note>();
-            return repository.Select(x => x.Id == id).NotDeleted().FirstOrDefaultAsync();
+            return repository.Select(x => x.Id == id)
+                .NotDeleted().FirstOrDefaultAsync();
         }
     }
 }

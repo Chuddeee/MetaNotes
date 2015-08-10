@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace MetaNotes.Infrastructure.Data.EF
 {
+    /// <summary>Данные для предзаполнения заметок</summary>
     internal static class NotesSeed
     {
         private const string _defaultTitle = "Дефолтный заголовок";

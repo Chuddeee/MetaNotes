@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Infrastructure.Data.EF
 {
-    public sealed class EfUnitOfWork : IUnitOfWork
+    internal sealed class EfUnitOfWork : IUnitOfWork
     {
         private readonly DbContext _dbContext;
         private bool _disposed = false;

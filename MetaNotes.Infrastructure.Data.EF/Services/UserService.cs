@@ -1,5 +1,4 @@
-﻿using MetaNotes.Business.Services;
-using MetaNotes.Core.Entities;
+﻿using MetaNotes.Core.Entities;
 using MetaNotes.Core.Services;
 using MetaNotes.Extensions;
 using System;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Infrastructure.Data.EF
 {
-    public class UserService : BaseService, IUserService
+    internal class UserService : BaseService, IUserService
     {
         public UserService(IUnitOfWork uow) : base(uow) { }
 
@@ -22,9 +21,6 @@ namespace MetaNotes.Infrastructure.Data.EF
                 .FirstOrDefaultAsync();
         }
 
-        /// <summary>Получает пользователя по логину и паролю. </summary>
-        /// <param name="login">логин пользователя</param>
-        /// <param name="passwordHash">хеш код пароля</param>
         public async Task<User> GetUser(string login, string passwordHash)
         {
             if (login.IsNullOrWhiteSpace() || passwordHash.IsNullOrWhiteSpace())

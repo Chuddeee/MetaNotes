@@ -1,8 +1,10 @@
 ﻿using MetaNotes.Core.Services;
 
+[assembly: InternalsVisibleTo("MetaNotes.Infrastructure.DependencyResolution")]
 namespace MetaNotes.Infrastructure.Data.EF
 {
-    public class BaseService
+    /// <summary>Базовый класс для сервисов</summary>
+    internal abstract class BaseService
     {
         private readonly IUnitOfWork _uow;
 

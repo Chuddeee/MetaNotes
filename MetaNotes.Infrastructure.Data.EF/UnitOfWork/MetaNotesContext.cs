@@ -3,14 +3,13 @@ using System.Data.Entity;
 
 namespace MetaNotes.Infrastructure.Data.EF
 {
-    public class MetaNotesContext : DbContext
+    internal class MetaNotesContext : DbContext
     {
         /// <summary>Заметки пользователя</summary>
         public DbSet<Note> Notes { get; set; }
 
         /// <summary>Пользователи</summary>
         public DbSet<User> Users { get; set; }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

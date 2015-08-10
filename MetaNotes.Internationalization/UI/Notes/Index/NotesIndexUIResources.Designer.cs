@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MetaNotes.Internationalization.UI.Notes {
+namespace MetaNotes.Internationalization.UI.Notes.Index {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MetaNotes.Internationalization.UI.Notes {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MetaNotes.Internationalization.UI.Notes.NotesIndexUIResources", typeof(NotesIndexUIResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MetaNotes.Internationalization.UI.Notes.Index.NotesIndexUIResources", typeof(NotesIndexUIResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

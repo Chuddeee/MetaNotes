@@ -26,7 +26,7 @@ namespace MetaNotes.Infrastructure.Data.EF
         public Task<Note> GetNote(int id)
         {
             var repository = UnitOfWork.GetRepository<Note>();
-            return repository.Select(x => x.Id == id).FirstOrDefaultAsync();
+            return repository.Select(x => x.Id == id).NotDeleted().FirstOrDefaultAsync();
         }
     }
 }

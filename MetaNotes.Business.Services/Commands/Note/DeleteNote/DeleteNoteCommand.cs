@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services
 {
-    public class DeleteNoteCommand : BaseCommand<DeleteNoteArgs, EmptyCommandResult>
+    internal class DeleteNoteCommand : BaseCommand<DeleteNoteArgs, EmptyCommandResult>
     {
         #region Поля, конструктор
 

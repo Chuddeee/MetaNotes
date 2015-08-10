@@ -14,6 +14,9 @@ namespace MetaNotes.Infrastructure.DependencyResolution
             builder.RegisterType<CryptographyUtility>().As<ICryptographyUtility>();
 
             builder.RegisterType<FindUserCommand>().As<ICommand<FindUserArgs, FindUserResult>>();
+            builder.RegisterType<EditNoteCommand>().As<ICommand<EditNoteArgs, EmptyCommandResult>>();
+            builder.RegisterType<CreateNoteCommand>().As<ICommand<CreateNoteArgs, EmptyCommandResult>>();
+            builder.RegisterType<DeleteNoteCommand>().As<ICommand<DeleteNoteArgs, EmptyCommandResult>>();
         }
     }
 }

@@ -5,6 +5,16 @@
     Layout = "~/Views/Shared/Layouts/MainLayout.cshtml";
 }
 
+@if (TempData[KeysConstants.ErrorMessageKey] != null)
+{
+    <div class="alert alert-danger">@TempData[KeysConstants.ErrorMessageKey]</div>
+}
+
+@if (TempData[KeysConstants.SuccessMessageKey] != null)
+{
+    <div class="alert alert-success">@TempData[KeysConstants.SuccessMessageKey]</div>
+}
+
 <form role="form" action="@Url.Action("Edit","Notes")" method="post">
     @* Заголовок *@
     <div class="form-group">

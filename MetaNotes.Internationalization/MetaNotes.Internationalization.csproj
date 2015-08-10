@@ -90,12 +90,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountIndexUIResources.ru.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI\Notes\NotesIndexUIResources.ru.Designer.cs">
+    <Compile Include="UI\Notes\Edit\NotesEditUIResources.ru.Designer.cs">
+      <DependentUpon>NotesEditUIResources.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\Notes\Edit\NotesEditUIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotesEditUIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Notes\Index\NotesIndexUIResources.ru.Designer.cs">
       <DependentUpon>NotesIndexUIResources.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="UI\Notes\NotesIndexUIResources.Designer.cs">
+    <Compile Include="UI\Notes\Index\NotesIndexUIResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NotesIndexUIResources.resx</DependentUpon>
@@ -142,11 +152,19 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountIndexUIResources.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Notes\NotesIndexUIResources.ru.resx">
+    <EmbeddedResource Include="UI\Notes\Edit\NotesEditUIResources.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotesEditUIResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Notes\Edit\NotesEditUIResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotesEditUIResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Notes\Index\NotesIndexUIResources.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NotesIndexUIResources.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Notes\NotesIndexUIResources.resx">
+    <EmbeddedResource Include="UI\Notes\Index\NotesIndexUIResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>NotesIndexUIResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>

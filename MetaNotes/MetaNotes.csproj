@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attributes\DenyAuthorizedAttribute.cs" />
+    <Compile Include="Constants\KeysConstants.cs" />
     <Compile Include="Constants\UrlConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />

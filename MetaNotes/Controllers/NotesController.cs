@@ -4,6 +4,8 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using MetaNotes.Business.Services;
+using MetaNotes.Internationalization.UI.Notes.Edit;
 
 namespace MetaNotes.Controllers
 {
@@ -48,15 +50,84 @@ namespace MetaNotes.Controllers
             if(request == null)
                 return View(request);
 
+            if(request.NoteId.HasValue)
+            {
+                var editCommand = DependencyResolver.Current
+                    .GetService<ICommand<EditNoteArgs, EmptyCommandResult>>();
 
+                var args = new EditNoteArgs
+                {
+                    Body = request.Body,
+                    ChangedByUserId = UserId.Value,
+                    IsPublic = request.IsPublic,
+                    NoteId = request.NoteId.Value,
+                    Title = request.Title
+                };
 
-            return View();
+                var result = await editCommand.Execute(args);
+
+                if(result.IsSuccess)
+                {
+                    TempData[KeysConstants.SuccessMessageKey] = NotesEditUIResources.NoteSuccessChanged;
+                    return RedirectToAction("Edit", new { noteId = request.NoteId.Value });
+                }
+                else
+                {
+                    TempData[KeysConstants.ErrorMessageKey] = result.ErrorMessage;
+                    return View(request);
+                }
+            }
+
+            var createCommand = DependencyResolver.Current
+                  .GetService<ICommand<CreateNoteArgs, EmptyCommandResult>>();
+
+            var createArgs = new CreateNoteArgs
+            {
+                Body = request.Body,
+                IsPublic = request.IsPublic,
+                Title = request.Title,
+                UserId = UserId.Value
+            };
+
+            var createResult = await createCommand.Execute(createArgs);
+
+            if (createResult.IsSuccess)
+            {
+                TempData[KeysConstants.SuccessMessageKey] = NotesEditUIResources.NoteSuccessCreated;
+                return RedirectToAction("Edit", new { noteId = request.NoteId.Value });
+            }
+            else
+            {
+                TempData[KeysConstants.ErrorMessageKey] = createResult.ErrorMessage;
+                return View(request);
+            }
         }
+
 
         [HttpPost]
         public async Task<ActionResult> Delete(int noteId)
         {
-            return View();
+            var command = DependencyResolver.Current
+                .GetService<ICommand<DeleteNoteArgs, EmptyCommandResult>>();
+
+            var args = new DeleteNoteArgs
+            {
+                NoteId = noteId,
+                UserId = UserId.Value
+            };
+
+            var result = await command.Execute(args);
+
+            if (result.IsSuccess)
+            {
+                TempData[KeysConstants.SuccessMessageKey] = NotesEditUIResources.NoteSuccessDeleted;
+            }
+            else
+            {
+                TempData[KeysConstants.ErrorMessageKey] = result.ErrorMessage;
+            }
+
+            return RedirectToAction("Index");
         }
 	}
 }

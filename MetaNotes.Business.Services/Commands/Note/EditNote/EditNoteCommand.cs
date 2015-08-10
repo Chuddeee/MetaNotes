@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services
 {
-    public class EditNoteCommand : BaseCommand<EditNoteArgs, EmptyCommandResult>
+    internal class EditNoteCommand : BaseCommand<EditNoteArgs, EmptyCommandResult>
     {
         #region Поля, конструктор
 

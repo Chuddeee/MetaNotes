@@ -39,6 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Errors\Note\NoteErrors.ru.Designer.cs">
+      <DependentUpon>NoteErrors.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Errors\Note\NoteErrors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteErrors.resx</DependentUpon>
+    </Compile>
     <Compile Include="Errors\Shared\SharedErrorsResources.ru.Designer.cs">
       <DependentUpon>SharedErrorsResources.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -92,6 +102,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Errors\Note\NoteErrors.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NoteErrors.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Errors\Note\NoteErrors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NoteErrors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Errors\Shared\SharedErrorsResources.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SharedErrorsResources.ru.Designer.cs</LastGenOutput>

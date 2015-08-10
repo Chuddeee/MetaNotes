@@ -12,10 +12,10 @@ namespace MetaNotes.UI.Services
 {
     public class NotesIndexModelBuilder
     {
-        private readonly INotesService _notesService;
+        private readonly INoteService _notesService;
         private readonly IUserService _userService;
 
-        public NotesIndexModelBuilder(INotesService notesService, IUserService userService)
+        public NotesIndexModelBuilder(INoteService notesService, IUserService userService)
         {
             _notesService = notesService;
             _userService = userService;
@@ -28,7 +28,7 @@ namespace MetaNotes.UI.Services
 
             var user = await _userService.GetUser(userId);
             if (user == null)
-                throw new NullReferenceException("user not found");
+                throw new ModelBuilderException("user not found");
 
             IQueryable<Note> notes;
             Guid? userIdFilter = null;

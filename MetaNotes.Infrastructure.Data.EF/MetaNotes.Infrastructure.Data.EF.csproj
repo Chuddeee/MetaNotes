@@ -67,7 +67,7 @@
     <Compile Include="SeedData\NotesSeed.cs" />
     <Compile Include="SeedData\UsersSeed.cs" />
     <Compile Include="Services\BaseService.cs" />
-    <Compile Include="Services\NotesService.cs" />
+    <Compile Include="Services\NoteService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="UnitOfWork\EfRepository.cs" />
     <Compile Include="UnitOfWork\EfUnitOfWork.cs" />

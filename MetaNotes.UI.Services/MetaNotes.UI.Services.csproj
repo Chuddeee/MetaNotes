@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\ModelBuilderException.cs" />
+    <Compile Include="ModelBuilders\Notes\EditNoteModelBuilder.cs" />
     <Compile Include="ModelBuilders\Notes\NotesIndexModelBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

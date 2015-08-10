@@ -9,7 +9,7 @@ namespace MetaNotes.Infrastructure.DependencyResolution
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<UserService>().As<IUserService>();
-            builder.RegisterType<NotesService>().As<INotesService>();
+            builder.RegisterType<NoteService>().As<INoteService>();
 
             builder.RegisterType<CryptographyUtility>().As<ICryptographyUtility>();
 

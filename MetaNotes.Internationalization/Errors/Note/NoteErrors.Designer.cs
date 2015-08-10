@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MetaNotes.Internationalization.Errors.User {
+namespace MetaNotes.Internationalization.Errors.Note {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace MetaNotes.Internationalization.Errors.User {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class UserErrors {
+    public class NoteErrors {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal UserErrors() {
+        internal NoteErrors() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MetaNotes.Internationalization.Errors.User {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MetaNotes.Internationalization.Errors.User.UserErrors", typeof(UserErrors).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MetaNotes.Internationalization.Errors.Note.NoteErrors", typeof(NoteErrors).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,11 @@ namespace MetaNotes.Internationalization.Errors.User {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid login or password.
+        ///   Looks up a localized string similar to Note not found.
         /// </summary>
-        public static string InvalidLoginOrPassword {
+        public static string NoteNotFound {
             get {
-                return ResourceManager.GetString("InvalidLoginOrPassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User can not edit note.
-        /// </summary>
-        public static string UserCannotEditNote {
-            get {
-                return ResourceManager.GetString("UserCannotEditNote", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User not found.
-        /// </summary>
-        public static string UserNotFound {
-            get {
-                return ResourceManager.GetString("UserNotFound", resourceCulture);
+                return ResourceManager.GetString("NoteNotFound", resourceCulture);
             }
         }
     }

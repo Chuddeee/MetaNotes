@@ -1,6 +1,8 @@
 ﻿using MetaNotes.UI.Model;
 using MetaNotes.UI.Services;
+using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MetaNotes.Controllers
@@ -19,7 +21,25 @@ namespace MetaNotes.Controllers
         [HttpGet]
         public async Task<ActionResult> Edit(int? noteId)
         {
-            return View();
+            if (noteId.HasValue)
+            {
+                var builder = DependencyResolver.Current.GetService<EditNoteModelBuilder>();
+
+                try
+                {
+                    var model = await builder.Build(UserId.Value, noteId.Value);
+                    return View(model);
+                }
+                catch (ModelBuilderException ex)
+                {
+                    throw new HttpException((int)HttpStatusCode.NotFound, "");
+                }
+            }
+
+            return View(new EditNoteModel
+                {
+                    CanEdit = true,
+                });
         }
 
         [HttpPost]

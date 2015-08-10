@@ -61,6 +61,15 @@ namespace MetaNotes.Internationalization.Errors.System {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Internal server error.
+        /// </summary>
+        public static string InternalServerError {
+            get {
+                return ResourceManager.GetString("InternalServerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid request.
         /// </summary>
         public static string InvalidRequest {

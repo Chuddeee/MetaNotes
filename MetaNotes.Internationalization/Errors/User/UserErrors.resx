@@ -121,4 +121,10 @@
     <value>Invalid login or password</value>
     <comment>Если ввели некорректный логин или пароль</comment>
   </data>
+  <data name="UserCannotEditNote" xml:space="preserve">
+    <value>User can not edit note</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>User not found</value>
+  </data>
 </root>

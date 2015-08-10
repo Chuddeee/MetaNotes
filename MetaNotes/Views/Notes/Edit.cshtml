@@ -1,6 +1,74 @@
-﻿@{
-    ViewBag.Title = "Изменение заметки";
+﻿@model EditNoteModel
+
+@{
+    ViewBag.Title = "Заметка";
     Layout = "~/Views/Shared/Layouts/MainLayout.cshtml";
 }
 
-<div>Заметки изменение</div>
+<form role="form" action="@Url.Action("Edit","Notes")" method="post">
+    @* Заголовок *@
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Title)
+
+        @if(Model.CanEdit)
+        {
+            @Html.TextBoxFor(x => x.Title, new { @Class = "form-control" })
+        }
+        else
+        {
+            @Html.TextBoxFor(x => x.Title, new 
+            {
+                @Class = "form-control",
+                @Disabled = "disabled"
+            })
+        }
+    </div>
+
+    @* Тело *@
+    <div class="form-group">
+        @Html.LabelFor(x => x.Body)
+
+        @if (Model.CanEdit)
+        {
+            @Html.TextAreaFor(x => x.Body, new { @Class = "form-control" })
+        }
+        else
+        {
+            @Html.TextAreaFor(x => x.Body, new
+            {
+                @Class = "form-control",
+                @Disabled = "disabled"
+            })
+        }
+    </div>
+
+    @* Публичность *@
+    <div class="form-group">
+        @Html.LabelFor(x => x.IsPublic)
+
+        @if (Model.CanEdit)
+        {
+            @Html.CheckBoxFor(x => x.IsPublic, new { @Class = "form-control" })
+        }
+        else
+        {
+            @Html.CheckBoxFor(x => x.IsPublic, new
+            {
+                @Class = "form-control",
+                @Disabled = "disabled"
+            })
+        }
+    </div>
+
+    @Html.HiddenFor(x => x.NoteId)
+
+    @if(Model.CanEdit)
+    {
+        <button type="submit" class="btn btn-default">Сохранить</button>
+    }
+    
+    @*@if(Model.CanDelete)
+    {
+        <button type="submit" class="btn btn-default">Удалить</button>
+    }*@
+</form>

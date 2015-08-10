@@ -1,10 +1,10 @@
 ﻿using MetaNotes.Business.Services;
 using MetaNotes.Core.Services;
-using MetaNotes.UI.Model;
+using MetaNotes.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace MetaNotes.UI.Services
+namespace MetaNotes
 {
     public class EditNoteModelBuilder
     {

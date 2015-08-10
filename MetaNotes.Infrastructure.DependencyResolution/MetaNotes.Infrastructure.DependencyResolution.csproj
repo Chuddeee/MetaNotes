@@ -56,7 +56,6 @@
     <Compile Include="AutofacModules\BusinessServicesModule.cs" />
     <Compile Include="AutofacModules\InfrastructureDataModule.cs" />
     <Compile Include="AutofacModules\ServicesModule.cs" />
-    <Compile Include="AutofacModules\UIServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,10 +86,6 @@
     <ProjectReference Include="..\MetaNotes.Services\MetaNotes.Services.csproj">
       <Project>{d117be69-338f-40b8-a420-b7f2d2f8323e}</Project>
       <Name>MetaNotes.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetaNotes.UI.Services\MetaNotes.UI.Services.csproj">
-      <Project>{b9497ed2-8086-47c1-b897-ae1fc601aa3d}</Project>
-      <Name>MetaNotes.UI.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

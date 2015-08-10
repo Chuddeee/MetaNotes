@@ -1,6 +1,6 @@
 ﻿using MetaNotes.Attributes;
 using MetaNotes.Business.Services;
-using MetaNotes.UI.Model;
+using MetaNotes.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using System;

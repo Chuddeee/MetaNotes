@@ -1,9 +1,12 @@
 ﻿using Autofac;
-using MetaNotes.UI.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace MetaNotes.Infrastructure.DependencyResolution
+namespace MetaNotes.App_Start
 {
-    public class UIServicesModule : Module
+    public class MetaNotesAutofacModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

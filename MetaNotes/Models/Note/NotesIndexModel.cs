@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 
-namespace MetaNotes.UI.Model
+namespace MetaNotes.Models
 {
     public class NotesIndexModel
     {

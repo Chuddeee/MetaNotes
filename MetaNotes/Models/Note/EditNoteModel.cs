@@ -1,4 +1,4 @@
-﻿namespace MetaNotes.UI.Model
+﻿namespace MetaNotes.Models
 {
     public class EditNoteModel
     {

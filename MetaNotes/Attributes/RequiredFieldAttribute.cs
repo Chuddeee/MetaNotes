@@ -1,7 +1,7 @@
 ﻿using MetaNotes.Internationalization.Errors.Shared;
 using System.ComponentModel.DataAnnotations;
 
-namespace MetaNotes.UI.Model
+namespace MetaNotes
 {
     /// <summary>Атрибут Required. Берет ключ по умолчанию</summary>
     public class RequiredFieldAttribute : RequiredAttribute

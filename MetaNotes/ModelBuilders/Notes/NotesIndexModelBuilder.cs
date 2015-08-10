@@ -1,15 +1,14 @@
-﻿using MetaNotes.Business.Services;
-using MetaNotes.Core.Entities;
+﻿using MetaNotes.Core.Entities;
 using MetaNotes.Core.Services;
 using MetaNotes.Internationalization.UI.Notes.Index;
-using MetaNotes.UI.Model;
+using MetaNotes.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace MetaNotes.UI.Services
+namespace MetaNotes
 {
     public class NotesIndexModelBuilder
     {

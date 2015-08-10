@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MetaNotes.UI.Model
+namespace MetaNotes.Models
 {
     /// <summary>Модель для отображения заметки в таблице</summary>
     public class NoteTableModel

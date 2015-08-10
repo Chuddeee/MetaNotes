@@ -1,4 +1,4 @@
-﻿namespace MetaNotes.UI.Model
+﻿namespace MetaNotes.Models
 {
     /// <summary>Модель для фильтрации заметок</summary>
     public class NotesFilterModel

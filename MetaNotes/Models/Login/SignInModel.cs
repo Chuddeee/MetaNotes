@@ -4,7 +4,7 @@ using MetaNotes.Internationalization.Errors.Account;
 using MetaNotes.Internationalization.UI.Account;
 using System.ComponentModel.DataAnnotations;
 
-namespace MetaNotes.UI.Model
+namespace MetaNotes.Models
 {
     //часть локализации пропущена, т.к. мало времени было
     public class SignInModel

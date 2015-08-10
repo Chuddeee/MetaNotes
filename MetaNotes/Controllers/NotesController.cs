@@ -1,8 +1,7 @@
 ﻿using MetaNotes.Business.Services;
 using MetaNotes.Common;
 using MetaNotes.Internationalization.UI.Notes.Edit;
-using MetaNotes.UI.Model;
-using MetaNotes.UI.Services;
+using MetaNotes.Models;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web;

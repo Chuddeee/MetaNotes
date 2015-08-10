@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MetaNotes.UI.Services
+namespace MetaNotes
 {
     public class ModelBuilderException : Exception
     {

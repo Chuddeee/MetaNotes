@@ -159,9 +159,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DbConfig.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
+    <Compile Include="App_Start\MetaNotesAutofacModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attributes\DenyAuthorizedAttribute.cs" />
+    <Compile Include="Attributes\RequiredFieldAttribute.cs" />
     <Compile Include="Authentication\ApplicationUser.cs" />
     <Compile Include="Authentication\UserManager.cs" />
     <Compile Include="Authentication\UserStore.cs" />
@@ -169,9 +171,17 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\LogsController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
+    <Compile Include="Exceptions\ModelBuilderException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelBuilders\Notes\EditNoteModelBuilder.cs" />
+    <Compile Include="ModelBuilders\Notes\NotesIndexModelBuilder.cs" />
+    <Compile Include="Models\Login\SignInModel.cs" />
+    <Compile Include="Models\Note\EditNoteModel.cs" />
+    <Compile Include="Models\Note\NotesFilterModel.cs" />
+    <Compile Include="Models\Note\NotesIndexModel.cs" />
+    <Compile Include="Models\Note\NoteTableModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -245,14 +255,6 @@
     <ProjectReference Include="..\MetaNotes.Internationalization\MetaNotes.Internationalization.csproj">
       <Project>{01c9e4ef-7698-49e3-829a-b7e5d3fdbb60}</Project>
       <Name>MetaNotes.Internationalization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetaNotes.UI.Model\MetaNotes.UI.Model.csproj">
-      <Project>{2dfff27f-b7d2-4598-a890-4c6701204bd8}</Project>
-      <Name>MetaNotes.UI.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetaNotes.UI.Services\MetaNotes.UI.Services.csproj">
-      <Project>{b9497ed2-8086-47c1-b897-ae1fc601aa3d}</Project>
-      <Name>MetaNotes.UI.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

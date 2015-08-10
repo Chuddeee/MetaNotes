@@ -1,5 +1,6 @@
 ﻿using MetaNotes.Business.Services;
 using MetaNotes.Core.Entities;
+using MetaNotes.Core.Services;
 using MetaNotes.Internationalization.UI.Notes.Index;
 using MetaNotes.UI.Model;
 using System;

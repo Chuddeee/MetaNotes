@@ -1,4 +1,5 @@
 ﻿using MetaNotes.Business.Services;
+using MetaNotes.Core.Services;
 using MetaNotes.UI.Model;
 using System;
 using System.Threading.Tasks;

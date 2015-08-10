@@ -56,8 +56,6 @@
     <Compile Include="Commands\User\FindUserResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rules\NoteRules.cs" />
-    <Compile Include="Services\INoteService.cs" />
-    <Compile Include="Services\IUserService.cs" />
     <Compile Include="Utils\Base\ICryptographyUtility.cs" />
     <Compile Include="Utils\Cryptography\CryptographyUtility.cs" />
   </ItemGroup>

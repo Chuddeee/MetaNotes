@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using MetaNotes.Business.Services;
+using MetaNotes.Core.Services;
 using MetaNotes.Infrastructure.Data.EF;
 
 namespace MetaNotes.Infrastructure.DependencyResolution

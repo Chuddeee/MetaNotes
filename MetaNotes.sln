@@ -23,8 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaNotes.Services", "MetaNotes.Services\MetaNotes.Services.csproj", "{D117BE69-338F-40B8-A420-B7F2D2F8323E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{56E5C91D-3DEF-4D2C-908E-A4844B03C885}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaNotes.Infrastructure.DependencyResolution", "MetaNotes.Infrastructure.DependencyResolution\MetaNotes.Infrastructure.DependencyResolution.csproj", "{773F1894-FE00-466F-AAB1-3D5171169DA8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaNotes.Infrastructure.Mapping", "MetaNotes.Infrastructure.Mapping\MetaNotes.Infrastructure.Mapping.csproj", "{EB8B8840-EF8C-4BF6-9021-1E3EDAAE6A18}"
@@ -86,7 +84,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2CDE653C-9157-4DAB-9FD7-5C0919D5CB11} = {56E5C91D-3DEF-4D2C-908E-A4844B03C885}
 		{48D0EBEF-90F1-49EF-B459-E65B8379FF2D} = {C4954C41-BC53-45C3-A4FF-CBD6682E666A}
 		{7E2BA1E2-4CE0-4E42-BE4A-8DD23F9885EA} = {B3968CBA-E665-4C18-B88F-EA300BF169BA}
 		{773F1894-FE00-466F-AAB1-3D5171169DA8} = {B3968CBA-E665-4C18-B88F-EA300BF169BA}

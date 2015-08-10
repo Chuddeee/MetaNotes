@@ -9,6 +9,8 @@ namespace MetaNotes.Core.Services
     /// <typeparam name="TEntity">Тип сущности, с которой работает репозиторий</typeparam>
     public interface IRepository<TEntity> where TEntity : class, IEntity
     {
+        /// <summary>Возвращает IQueryable коллекцию сущностей</summary>
+        /// <param name="predicate">Условие фильтрации</param>
         IQueryable<TEntity> Select(Expression<Func<TEntity, bool>> predicate = null);
 
         TEntity Add(TEntity entity);

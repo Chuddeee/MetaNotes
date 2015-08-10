@@ -12,6 +12,7 @@
 
 <form class="form-signin" action="@Url.Action("SignIn","Account")" method="post">
     <h2 class="form-signin-heading">@AccountIndexUIResources.SignIn_Title</h2>
+
     @Html.TextBoxFor(x => x.Login, new { 
         @Class = "form-control", 
         @Placeholder = AccountIndexUIResources.Login_Title,
@@ -20,12 +21,12 @@
 
     @Html.PasswordFor(x => x.Password, new
     {
-        @Class = "form-control",
+        @Class = "form-control margintop15",
         @Placeholder = AccountIndexUIResources.Password_Title
     })
     @Html.ValidationMessageFor(x => x.Password)
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">
+    <button class="btn btn-lg btn-primary btn-block margintop15" type="submit">
         @AccountIndexUIResources.SignIn_Button
     </button>
 </form>

@@ -1,0 +1,7 @@
+﻿.margintop15 {
+    margin-top: 15px;
+}
+
+.field-validation-error {
+    color: red;
+}

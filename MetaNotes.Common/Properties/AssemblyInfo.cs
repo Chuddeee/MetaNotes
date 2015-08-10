@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MetaNotes.Extensions")]
+[assembly: AssemblyTitle("MetaNotes.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DDGroup")]
-[assembly: AssemblyProduct("MetaNotes.Extensions")]
+[assembly: AssemblyProduct("MetaNotes.Common")]
 [assembly: AssemblyCopyright("Copyright © DDGroup 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("68f3f293-bc10-4734-bb35-321b447bba2b")]
+[assembly: Guid("158a4e34-0679-4427-ae82-9d0bdd7d6e7d")]
 
 // Version information for an assembly consists of the following four values:
 //

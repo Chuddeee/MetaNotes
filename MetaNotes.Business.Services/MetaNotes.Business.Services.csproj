@@ -62,6 +62,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\MetaNotes.Common\MetaNotes.Common.csproj">
+      <Project>{4ca5e79b-e14e-43bf-859f-6c045117047d}</Project>
+      <Name>MetaNotes.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetaNotes.Core.Entities\MetaNotes.Core.Entities.csproj">
       <Project>{3e0f0133-b6a4-443e-9c73-cde870fecf27}</Project>
       <Name>MetaNotes.Core.Entities</Name>
@@ -69,10 +73,6 @@
     <ProjectReference Include="..\MetaNotes.Core.Services\MetaNotes.Core.Services.csproj">
       <Project>{5dc5239b-ab48-48f7-b07f-e4315d6fc025}</Project>
       <Name>MetaNotes.Core.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetaNotes.Extensions\MetaNotes.Extensions.csproj">
-      <Project>{66958f3c-e891-436f-b51c-bc8bb31d2b9d}</Project>
-      <Name>MetaNotes.Extensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetaNotes.Internationalization\MetaNotes.Internationalization.csproj">
       <Project>{01c9e4ef-7698-49e3-829a-b7e5d3fdbb60}</Project>

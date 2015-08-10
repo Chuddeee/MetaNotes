@@ -1,5 +1,5 @@
-﻿using MetaNotes.Constants;
-using MetaNotes.Extensions;
+﻿using MetaNotes.Common;
+using MetaNotes.Constants;
 using System;
 using System.Net;
 using System.Web;

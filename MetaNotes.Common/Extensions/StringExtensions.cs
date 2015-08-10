@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace MetaNotes.Extensions
+namespace MetaNotes.Common
 {
     public static class StringExtensions
     {

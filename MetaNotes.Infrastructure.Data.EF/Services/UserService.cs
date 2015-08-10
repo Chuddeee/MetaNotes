@@ -1,6 +1,6 @@
-﻿using MetaNotes.Core.Entities;
+﻿using MetaNotes.Common;
+using MetaNotes.Core.Entities;
 using MetaNotes.Core.Services;
-using MetaNotes.Extensions;
 using System;
 using System.Data.Entity;
 using System.Linq;

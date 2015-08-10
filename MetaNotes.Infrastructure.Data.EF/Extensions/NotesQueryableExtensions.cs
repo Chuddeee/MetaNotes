@@ -1,5 +1,5 @@
-﻿using MetaNotes.Core.Entities;
-using MetaNotes.Extensions;
+﻿using MetaNotes.Common;
+using MetaNotes.Core.Entities;
 using System;
 using System.Linq;
 

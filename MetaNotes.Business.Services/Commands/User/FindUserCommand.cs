@@ -1,6 +1,6 @@
-﻿using MetaNotes.Core.Entities;
+﻿using MetaNotes.Common;
+using MetaNotes.Core.Entities;
 using MetaNotes.Core.Services;
-using MetaNotes.Extensions;
 using MetaNotes.Internationalization.Errors.System;
 using MetaNotes.Internationalization.Errors.User;
 using System.Threading.Tasks;

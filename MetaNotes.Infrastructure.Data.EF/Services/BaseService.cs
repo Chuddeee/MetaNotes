@@ -1,6 +1,8 @@
 ﻿using MetaNotes.Core.Services;
+using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("MetaNotes.Infrastructure.DependencyResolution")]
+[assembly: InternalsVisibleTo("MetaNotes")]
 namespace MetaNotes.Infrastructure.Data.EF
 {
     /// <summary>Базовый класс для сервисов</summary>

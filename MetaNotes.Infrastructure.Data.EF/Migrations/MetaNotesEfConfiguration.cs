@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace MetaNotes.Infrastructure.Data.EF
 {
-    public sealed class MetaNotesEfConfiguration : DbMigrationsConfiguration<MetaNotesContext>
+    internal sealed class MetaNotesEfConfiguration : DbMigrationsConfiguration<MetaNotesContext>
     {
         public MetaNotesEfConfiguration()
         {

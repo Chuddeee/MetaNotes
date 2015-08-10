@@ -1,11 +1,8 @@
 ﻿using MetaNotes.Core.Entities;
-using MetaNotes.Internationalization.Errors.Note;
+using MetaNotes.Core.Services;
 using MetaNotes.Internationalization.Errors.System;
 using MetaNotes.Internationalization.Errors.User;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services

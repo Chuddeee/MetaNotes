@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MetaNotes.Infrastructure.Mapping
 {
-    public class AutofacMapper : IMapper
+    public class AutoMapper : IMapper
     {
         public TDestination Map<TSource, TDestination>(TSource source)
         {

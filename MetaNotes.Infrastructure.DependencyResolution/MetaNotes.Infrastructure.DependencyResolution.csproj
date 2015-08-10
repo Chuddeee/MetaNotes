@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
@@ -55,6 +56,7 @@
     <Compile Include="AutofacModules\BusinessServicesModule.cs" />
     <Compile Include="AutofacModules\InfrastructureDataModule.cs" />
     <Compile Include="AutofacModules\InfrastructureIdentityModule.cs" />
+    <Compile Include="AutofacModules\ServicesModule.cs" />
     <Compile Include="AutofacModules\UIServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -82,6 +84,14 @@
     <ProjectReference Include="..\MetaNotes.Infrastructure.Data.EF\MetaNotes.Infrastructure.Data.EF.csproj">
       <Project>{7e2ba1e2-4ce0-4e42-be4a-8dd23f9885ea}</Project>
       <Name>MetaNotes.Infrastructure.Data.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Infrastructure.Mapping\MetaNotes.Infrastructure.Mapping.csproj">
+      <Project>{eb8b8840-ef8c-4bf6-9021-1e3edaae6a18}</Project>
+      <Name>MetaNotes.Infrastructure.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Services\MetaNotes.Services.csproj">
+      <Project>{d117be69-338f-40b8-a420-b7f2d2f8323e}</Project>
+      <Name>MetaNotes.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetaNotes.UI.Services\MetaNotes.UI.Services.csproj">
       <Project>{b9497ed2-8086-47c1-b897-ae1fc601aa3d}</Project>

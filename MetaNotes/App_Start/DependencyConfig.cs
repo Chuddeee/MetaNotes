@@ -14,6 +14,7 @@ namespace MetaNotes
             builder.RegisterModule(new BusinessServicesModule());
             builder.RegisterModule(new InfrastructureIdentityModule());
             builder.RegisterModule(new UIServicesModule());
+            builder.RegisterModule(new ServicesModule());
              
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 

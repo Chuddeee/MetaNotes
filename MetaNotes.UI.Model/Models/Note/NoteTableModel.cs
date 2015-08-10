@@ -3,7 +3,7 @@
 namespace MetaNotes.UI.Model
 {
     /// <summary>Модель для отображения заметки в таблице</summary>
-    public class NoteTableModel
+    public class NoteTableModel : IViewModel
     {
         /// <summary>Id записи</summary>
         public int Id { get; set; }

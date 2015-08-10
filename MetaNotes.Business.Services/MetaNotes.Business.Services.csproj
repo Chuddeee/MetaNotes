@@ -45,6 +45,7 @@
     <Compile Include="Commands\Base\ICommand.cs" />
     <Compile Include="Commands\Base\ICommandArguments.cs" />
     <Compile Include="Commands\Base\ICommandResult.cs" />
+    <Compile Include="Commands\Extensions\CommandResultExtensions.cs" />
     <Compile Include="Commands\Note\CreateNote\CreateNoteArgs.cs" />
     <Compile Include="Commands\Note\CreateNote\CreateNoteCommand.cs" />
     <Compile Include="Commands\Note\DeleteNote\DeleteNoteArgs.cs" />

@@ -2,6 +2,7 @@
 
 namespace MetaNotes.Business.Services
 {
+    /// <summary>Бизнес правила для заметок</summary>
     public static class NoteRules
     {
         /// <summary>Может ли пользователь редактировать заметку</summary>

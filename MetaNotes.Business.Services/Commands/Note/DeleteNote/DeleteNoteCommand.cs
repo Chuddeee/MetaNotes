@@ -4,13 +4,11 @@ using MetaNotes.Internationalization.Errors.Note;
 using MetaNotes.Internationalization.Errors.System;
 using MetaNotes.Internationalization.Errors.User;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services
 {
+    /// <summary>Команда удаления заметки</summary>
     internal class DeleteNoteCommand : BaseCommand<DeleteNoteArgs, EmptyCommandResult>
     {
         #region Поля, конструктор
@@ -30,7 +28,6 @@ namespace MetaNotes.Business.Services
         #endregion
 
 
-
         protected override async Task<EmptyCommandResult> PerformCommand(DeleteNoteArgs arguments)
         {
             var result = new EmptyCommandResult() { IsSuccess = true };
@@ -43,7 +40,6 @@ namespace MetaNotes.Business.Services
 
             return result;
         }
-
 
 
         protected override async Task<EmptyCommandResult> Validate(DeleteNoteArgs arguments)

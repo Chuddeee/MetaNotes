@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services
 {
+    /// <summary>Команда создания заметки</summary>
     internal class CreateNoteCommand : BaseCommand<CreateNoteArgs, EmptyCommandResult>
     {
         #region Поля, конструктор
@@ -44,6 +45,7 @@ namespace MetaNotes.Business.Services
 
             return result;
         }
+
 
         protected override async Task<EmptyCommandResult> Validate(CreateNoteArgs arguments)
         {

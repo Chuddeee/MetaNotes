@@ -39,7 +39,7 @@ namespace MetaNotes.Business.Services
         protected abstract Task<TResult> PerformCommand(TArguments arguments);
 
         /// <summary>В данном методе должна происходить вся валидация и 
-        /// различные проверки передвыполнением</summary>
+        /// различные проверки перед выполнением</summary>
         protected abstract Task<TResult> Validate(TArguments arguments);
 
     }

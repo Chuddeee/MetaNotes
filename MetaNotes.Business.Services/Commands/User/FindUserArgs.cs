@@ -1,6 +1,6 @@
 ﻿namespace MetaNotes.Business.Services
 {
-    /// <summary>Аргументы для команды поиска пользователя</summary>
+    /// <summary>Аргументы для команды поиска пользователя по логину и паролю</summary>
     public class FindUserArgs : ICommandArguments
     {
         public string Login { get; set; }

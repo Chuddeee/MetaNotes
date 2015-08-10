@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services
 {
+    /// <summary>Команда поиска пользователя по логину и паролю</summary>
     internal class FindUserCommand : BaseCommand<FindUserArgs, FindUserResult>
     {
         private readonly IUserService _userService;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services
 {
-    public class CreateNoteCommand : BaseCommand<CreateNoteArgs, CreateNoteResult>
+    public class CreateNoteCommand : BaseCommand<CreateNoteArgs, EmptyCommandResult>
     {
         #region Поля, конструктор
 
@@ -25,9 +25,9 @@ namespace MetaNotes.Business.Services
         #endregion
 
 
-        protected override async Task<CreateNoteResult> PerformCommand(CreateNoteArgs arguments)
+        protected override async Task<EmptyCommandResult> PerformCommand(CreateNoteArgs arguments)
         {
-            var result = new CreateNoteResult() { IsSuccess = true };
+            var result = new EmptyCommandResult() { IsSuccess = true };
 
             var note = new Note
             {
@@ -45,9 +45,9 @@ namespace MetaNotes.Business.Services
             return result;
         }
 
-        protected override async Task<CreateNoteResult> Validate(CreateNoteArgs arguments)
+        protected override async Task<EmptyCommandResult> Validate(CreateNoteArgs arguments)
         {
-            var result = new CreateNoteResult() { IsSuccess = true };
+            var result = new EmptyCommandResult() { IsSuccess = true };
 
             if(arguments == null)
             {

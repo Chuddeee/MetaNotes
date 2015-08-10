@@ -45,6 +45,11 @@ namespace MetaNotes.Controllers
         [HttpPost]
         public async Task<ActionResult> Edit(EditNoteModel request)
         {
+            if(request == null)
+                return View(request);
+
+
+
             return View();
         }
 

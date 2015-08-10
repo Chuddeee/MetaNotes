@@ -35,11 +35,12 @@ namespace MetaNotes.Business.Services
             return validateResult;
         }
 
+        /// <summary>Данный метод отвечает за выполнение команды</summary>
+        protected abstract Task<TResult> PerformCommand(TArguments arguments);
+
         /// <summary>В данном методе должна происходить вся валидация и 
         /// различные проверки передвыполнением</summary>
         protected abstract Task<TResult> Validate(TArguments arguments);
 
-        /// <summary>Данный метод отвечает за выполнение команды</summary>
-        protected abstract Task<TResult> PerformCommand(TArguments arguments);
     }
 }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services
 {
-    public class EditNoteResult : BaseCommandResult
+    public class EmptyCommandResult : BaseCommandResult
     {
-
     }
 }

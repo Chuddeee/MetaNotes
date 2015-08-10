@@ -121,6 +121,9 @@
     <value>Неверный логин или пароль</value>
     <comment>Если ввели некорректный логин или пароль</comment>
   </data>
+  <data name="UserCannotDeleteNote" xml:space="preserve">
+    <value>Пользователь не может удалить заметку</value>
+  </data>
   <data name="UserCannotEditNote" xml:space="preserve">
     <value>Пользователь не может изменять заметку</value>
   </data>

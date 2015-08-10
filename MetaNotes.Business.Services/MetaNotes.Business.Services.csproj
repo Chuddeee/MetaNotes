@@ -41,15 +41,16 @@
   <ItemGroup>
     <Compile Include="Commands\Base\BaseCommand.cs" />
     <Compile Include="Commands\Base\BaseCommandResult.cs" />
+    <Compile Include="Commands\Base\EmptyCommandResult.cs" />
     <Compile Include="Commands\Base\ICommand.cs" />
     <Compile Include="Commands\Base\ICommandArguments.cs" />
     <Compile Include="Commands\Base\ICommandResult.cs" />
     <Compile Include="Commands\Note\CreateNote\CreateNoteArgs.cs" />
     <Compile Include="Commands\Note\CreateNote\CreateNoteCommand.cs" />
-    <Compile Include="Commands\Note\CreateNote\CreateNoteResult.cs" />
+    <Compile Include="Commands\Note\DeleteNote\DeleteNoteArgs.cs" />
+    <Compile Include="Commands\Note\DeleteNote\DeleteNoteCommand.cs" />
     <Compile Include="Commands\Note\EditNote\EditNoteArgs.cs" />
     <Compile Include="Commands\Note\EditNote\EditNoteCommand.cs" />
-    <Compile Include="Commands\Note\EditNote\EditNoteResult.cs" />
     <Compile Include="Commands\User\FindUserArgs.cs" />
     <Compile Include="Commands\User\FindUserCommand.cs" />
     <Compile Include="Commands\User\FindUserResult.cs" />

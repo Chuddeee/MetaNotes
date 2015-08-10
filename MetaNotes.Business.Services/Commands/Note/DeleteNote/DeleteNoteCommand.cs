@@ -4,11 +4,14 @@ using MetaNotes.Internationalization.Errors.Note;
 using MetaNotes.Internationalization.Errors.System;
 using MetaNotes.Internationalization.Errors.User;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MetaNotes.Business.Services
 {
-    public class EditNoteCommand : BaseCommand<EditNoteArgs, EmptyCommandResult>
+    public class DeleteNoteCommand : BaseCommand<DeleteNoteArgs, EmptyCommandResult>
     {
         #region Поля, конструктор
 
@@ -17,7 +20,7 @@ namespace MetaNotes.Business.Services
         private User _user;
         private Note _note;
 
-        public EditNoteCommand(IUnitOfWork uow, IUserService userService, INoteService notesService)
+        public DeleteNoteCommand(IUnitOfWork uow, IUserService userService, INoteService notesService)
             : base(uow)
         {
             _userService = userService;
@@ -27,16 +30,13 @@ namespace MetaNotes.Business.Services
         #endregion
 
 
-        protected override async Task<EmptyCommandResult> PerformCommand(EditNoteArgs arguments)
+
+        protected override async Task<EmptyCommandResult> PerformCommand(DeleteNoteArgs arguments)
         {
             var result = new EmptyCommandResult() { IsSuccess = true };
-
-            _note.Body = arguments.Body;
-            _note.Title = arguments.Title;
-            _note.IsPublic = arguments.IsPublic;
-            _note.ChangedByUserId = arguments.ChangedByUserId;
-            _note.ChangingDate = DateTime.UtcNow;
-
+            _note.IsDeleted = true;
+            _note.DeletingDate = DateTime.UtcNow;
+            
             var repository = UnitOfWork.GetRepository<Note>();
             repository.Update(_note);
             await UnitOfWork.SaveChangesAsync();
@@ -44,17 +44,19 @@ namespace MetaNotes.Business.Services
             return result;
         }
 
-        protected override async Task<EmptyCommandResult> Validate(EditNoteArgs arguments)
+
+
+        protected override async Task<EmptyCommandResult> Validate(DeleteNoteArgs arguments)
         {
             var result = new EmptyCommandResult() { IsSuccess = true };
 
-            if(arguments == null)
+            if (arguments == null)
             {
                 result.AddError(SystemErrors.InvalidRequest);
                 return result;
             }
 
-            var userTask = _userService.GetUser(arguments.ChangedByUserId);
+            var userTask = _userService.GetUser(arguments.UserId);
             var noteTask = _noteService.GetNote(arguments.NoteId);
 
             await Task.WhenAll(userTask, noteTask);
@@ -62,21 +64,21 @@ namespace MetaNotes.Business.Services
             _user = userTask.Result;
             _note = noteTask.Result;
 
-            if(_user == null)
+            if (_user == null)
             {
                 result.AddError(UserErrors.UserNotFound);
                 return result;
             }
 
-            if(_note == null)
+            if (_note == null)
             {
                 result.AddError(NoteErrors.NoteNotFound);
                 return result;
             }
 
-            if(!_note.CanEdit(_user))
+            if (!_note.CanDelete(_user))
             {
-                result.AddError(UserErrors.UserCannotEditNote);
+                result.AddError(UserErrors.UserCannotDeleteNote);
                 return result;
             }
 

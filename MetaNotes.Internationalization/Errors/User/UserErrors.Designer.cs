@@ -70,6 +70,15 @@ namespace MetaNotes.Internationalization.Errors.User {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User can not delete note.
+        /// </summary>
+        public static string UserCannotDeleteNote {
+            get {
+                return ResourceManager.GetString("UserCannotDeleteNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User can not edit note.
         /// </summary>
         public static string UserCannotEditNote {

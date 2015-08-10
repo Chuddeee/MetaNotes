@@ -121,6 +121,9 @@
     <value>Invalid login or password</value>
     <comment>Если ввели некорректный логин или пароль</comment>
   </data>
+  <data name="UserCannotDeleteNote" xml:space="preserve">
+    <value>User can not delete note</value>
+  </data>
   <data name="UserCannotEditNote" xml:space="preserve">
     <value>User can not edit note</value>
   </data>

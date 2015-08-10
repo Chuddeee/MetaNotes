@@ -48,6 +48,7 @@
     <Compile Include="Commands\Extensions\CommandResultExtensions.cs" />
     <Compile Include="Commands\Note\CreateNote\CreateNoteArgs.cs" />
     <Compile Include="Commands\Note\CreateNote\CreateNoteCommand.cs" />
+    <Compile Include="Commands\Note\CreateNote\CreateNoteResult.cs" />
     <Compile Include="Commands\Note\DeleteNote\DeleteNoteArgs.cs" />
     <Compile Include="Commands\Note\DeleteNote\DeleteNoteCommand.cs" />
     <Compile Include="Commands\Note\EditNote\EditNoteArgs.cs" />

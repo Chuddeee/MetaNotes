@@ -1,35 +1,28 @@
-﻿@model NotesIndexModel
+﻿@using MetaNotes.Internationalization.UI.Notes.Index
+@model NotesIndexModel
 
 @using (Html.BeginForm("Index", "Notes", FormMethod.Get))
 {
     <div class="panel panel-default">
-        <div class="panel-heading">Фильтрация</div>
+        <div class="panel-heading">@NotesIndexUIResources.FilterTitle</div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-6">
-                    <label class="control-label">Ключевая фраза</label>
+                    <label class="control-label">@NotesIndexUIResources.KeyPhrase_Filter</label>
                     @Html.TextBoxFor(x => x.Filter.KeyPhrase, new { @class = "form-control" })
                 </div>
 
-                @if (Model.IsAdmin)
-                {
-                    <div class="col-xs-6">
-                        <label class="control-label">Тип записей</label>
-                        @Html.DropDownListFor(x => x.Filter.IsPublic, Model.PublicDropDownList, new { @class = "form-control" })
-                    </div>
-                }
+                <div class="col-xs-6">
+                    <label class="control-label">@NotesIndexUIResources.IsPublic_Filter</label>
+                    @Html.DropDownListFor(x => x.Filter.IsPublic, Model.PublicDropDownList, new { @class = "form-control" })
+                </div>
             </div>
 
-            <div class="row" style="padding-top: 15px">
-                <div class="col-md-6">
-                    <div class="col-md-2" style="padding-left: 0px">
-                        <input type="submit" class="btn btn-default form-control" value="Search">
-                    </div>
-                    <div class="col-md-2">
-                        <input type="button" id="clearFilters" class="btn btn-default form-control" value="Clear">
-                    </div>                    
+            <div class="row margintop15">
+                <div class="col-md-2">
+                    <input type="submit" class="btn btn-default form-control" 
+                           value="@NotesIndexUIResources.SearchBtn_Filter">                    
                 </div>
-                <div class="col-md-6"></div>
             </div>
         </div>
     </div>

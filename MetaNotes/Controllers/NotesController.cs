@@ -15,6 +15,7 @@ namespace MetaNotes.Controllers
         [HttpGet]
         public async Task<ActionResult> Index(NotesFilterModel filter = null)
         {
+            var a = ModelState;
             var builder = DependencyResolver.Current.GetService<NotesIndexModelBuilder>();
             var model = await builder.Build(UserId.Value, filter);
             return View(model);
@@ -47,60 +48,17 @@ namespace MetaNotes.Controllers
         [HttpPost]
         public async Task<ActionResult> Edit(EditNoteModel request)
         {
-            if(request == null)
-                return View(request);
+            var builder = DependencyResolver.Current.GetService<SaveNoteModelBuilder>();
+            var result = await builder.Build(UserId.Value, request);
 
-            if(request.NoteId.HasValue)
+            if (result.IsSuccess)
             {
-                var editCommand = DependencyResolver.Current
-                    .GetService<ICommand<EditNoteArgs, EmptyCommandResult>>();
-
-                var args = new EditNoteArgs
-                {
-                    Body = request.Body,
-                    ChangedByUserId = UserId.Value,
-                    IsPublic = request.IsPublic,
-                    NoteId = request.NoteId.Value,
-                    Title = request.Title
-                };
-
-                var result = await editCommand.Execute(args);
-
-                if(result.IsSuccess)
-                {
-                    TempData[KeysConstants.SuccessMessageKey] = NotesEditUIResources.NoteSuccessChanged;
-                    return RedirectToAction("Edit", new { noteId = request.NoteId.Value });
-                }
-                else
-                {
-                    TempData[KeysConstants.ErrorMessageKey] = result.ErrorMessage;
-                    return View(request);
-                }
-            }
-
-            var createCommand = DependencyResolver.Current
-                  .GetService<ICommand<CreateNoteArgs, EmptyCommandResult>>();
-
-            var createArgs = new CreateNoteArgs
-            {
-                Body = request.Body,
-                IsPublic = request.IsPublic,
-                Title = request.Title,
-                UserId = UserId.Value
-            };
-
-            var createResult = await createCommand.Execute(createArgs);
-
-            if (createResult.IsSuccess)
-            {
-                TempData[KeysConstants.SuccessMessageKey] = NotesEditUIResources.NoteSuccessCreated;
+                TempData[KeysConstants.SuccessMessageKey] = NotesEditUIResources.NoteSuccessChanged;
                 return RedirectToAction("Edit", new { noteId = request.NoteId.Value });
             }
-            else
-            {
-                TempData[KeysConstants.ErrorMessageKey] = createResult.ErrorMessage;
-                return View(request);
-            }
+
+            TempData[KeysConstants.ErrorMessageKey] = result.Error;
+            return View(request);
         }
 
 
@@ -122,10 +80,7 @@ namespace MetaNotes.Controllers
             {
                 TempData[KeysConstants.SuccessMessageKey] = NotesEditUIResources.NoteSuccessDeleted;
             }
-            else
-            {
-                TempData[KeysConstants.ErrorMessageKey] = result.ErrorMessage;
-            }
+            else TempData[KeysConstants.ErrorMessageKey] = result.ErrorMessage;
 
             return RedirectToAction("Index");
         }

@@ -125,9 +125,21 @@
     <value>Creating date</value>
     <comment>Текст столбца таблицы для колонки CreatingDate</comment>
   </data>
+  <data name="FilterTitle" xml:space="preserve">
+    <value>Filter</value>
+    <comment>Заголовок блока фильтрации</comment>
+  </data>
+  <data name="IsPublic_Filter" xml:space="preserve">
+    <value>Is public</value>
+    <comment>Лейбл для типа записей</comment>
+  </data>
   <data name="IsPublic_Grid" xml:space="preserve">
     <value>Is public</value>
     <comment>Текст столбца таблицы для колонки IsPublic</comment>
+  </data>
+  <data name="KeyPhrase_Filter" xml:space="preserve">
+    <value>Key phrase</value>
+    <comment>Лейбл для ключевой фразы в фильтре</comment>
   </data>
   <data name="OnlyNotPublic" xml:space="preserve">
     <value>Not public</value>
@@ -140,6 +152,10 @@
   <data name="OwnerId_Grid" xml:space="preserve">
     <value>Owner id</value>
     <comment>Текст столбца таблицы для колонки OwnerId</comment>
+  </data>
+  <data name="SearchBtn_Filter" xml:space="preserve">
+    <value>Search</value>
+    <comment>Текст на кнопке поиска</comment>
   </data>
   <data name="TitleColumn_Grid" xml:space="preserve">
     <value>Title</value>

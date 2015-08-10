@@ -177,6 +177,8 @@
     </Compile>
     <Compile Include="ModelBuilders\Notes\EditNoteModelBuilder.cs" />
     <Compile Include="ModelBuilders\Notes\NotesIndexModelBuilder.cs" />
+    <Compile Include="ModelBuilders\Notes\SaveNoteModelBuilder.cs" />
+    <Compile Include="ModelBuilders\Notes\SaveNoteModelBuilderResult.cs" />
     <Compile Include="Models\Login\SignInModel.cs" />
     <Compile Include="Models\Note\EditNoteModel.cs" />
     <Compile Include="Models\Note\NotesFilterModel.cs" />

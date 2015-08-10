@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MetaNotes.Business.Services
 {
     /// <summary>Команда создания заметки</summary>
-    internal class CreateNoteCommand : BaseCommand<CreateNoteArgs, EmptyCommandResult>
+    internal class CreateNoteCommand : BaseCommand<CreateNoteArgs, CreateNoteResult>
     {
         #region Поля, конструктор
 
@@ -26,9 +26,9 @@ namespace MetaNotes.Business.Services
         #endregion
 
 
-        protected override async Task<EmptyCommandResult> PerformCommand(CreateNoteArgs arguments)
+        protected override async Task<CreateNoteResult> PerformCommand(CreateNoteArgs arguments)
         {
-            var result = new EmptyCommandResult() { IsSuccess = true };
+            var result = new CreateNoteResult() { IsSuccess = true };
 
             var note = new Note
             {
@@ -43,13 +43,14 @@ namespace MetaNotes.Business.Services
             repository.Add(note);
             await UnitOfWork.SaveChangesAsync();
 
+            result.CreatedNoteId = note.Id;
             return result;
         }
 
 
-        protected override async Task<EmptyCommandResult> Validate(CreateNoteArgs arguments)
+        protected override async Task<CreateNoteResult> Validate(CreateNoteArgs arguments)
         {
-            var result = new EmptyCommandResult() { IsSuccess = true };
+            var result = new CreateNoteResult() { IsSuccess = true };
 
             if(arguments == null)
             {

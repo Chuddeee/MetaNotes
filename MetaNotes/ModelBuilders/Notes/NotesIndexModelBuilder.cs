@@ -52,31 +52,30 @@ namespace MetaNotes
                 UserId = x.OwnerId
             });
 
-            if (model.IsAdmin)
-            {
-                model.PublicDropDownList = GetList();
-            }
+            model.PublicDropDownList = GetList(arguments);
 
             return model;
         }
 
-        private IEnumerable<SelectListItem> GetList()
+        private IEnumerable<SelectListItem> GetList(NotesFilterModel arguments)
         {
             return new List<SelectListItem>()
             {
                 new SelectListItem
                 {
-                    Selected = true, 
+                    Selected = arguments.IsPublic == null, 
                     Text = NotesIndexUIResources.AllNotes, 
-                    Value = null
+                    Value = ""
                 },
                 new SelectListItem
                 {
+                    Selected = arguments.IsPublic == true,
                     Text = NotesIndexUIResources.OnlyPublic, 
                     Value = true.ToString()
                 },
                 new SelectListItem
                 {
+                    Selected = arguments.IsPublic == false,
                     Text = NotesIndexUIResources.OnlyNotPublic, 
                     Value = false.ToString()
                 }

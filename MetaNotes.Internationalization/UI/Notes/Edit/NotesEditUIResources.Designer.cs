@@ -61,6 +61,24 @@ namespace MetaNotes.Internationalization.UI.Notes.Edit {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Body.
+        /// </summary>
+        public static string BodyLabel {
+            get {
+                return ResourceManager.GetString("BodyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is public.
+        /// </summary>
+        public static string IsPublic {
+            get {
+                return ResourceManager.GetString("IsPublic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Note successfully changed.
         /// </summary>
         public static string NoteSuccessChanged {
@@ -84,6 +102,15 @@ namespace MetaNotes.Internationalization.UI.Notes.Edit {
         public static string NoteSuccessDeleted {
             get {
                 return ResourceManager.GetString("NoteSuccessDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string TitleLabel {
+            get {
+                return ResourceManager.GetString("TitleLabel", resourceCulture);
             }
         }
     }

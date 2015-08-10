@@ -1,4 +1,5 @@
-﻿@model EditNoteModel
+﻿@using MetaNotes.Internationalization.UI.Notes.Edit
+@model EditNoteModel
 
 @{
     ViewBag.Title = "Заметка";
@@ -15,10 +16,10 @@
     <div class="alert alert-success">@TempData[KeysConstants.SuccessMessageKey]</div>
 }
 
-<form role="form" action="@Url.Action("Edit","Notes")" method="post">
+<form role="form" class="col-xs-6" action="@Url.Action("Edit","Notes")" method="post">
     @* Заголовок *@
     <div class="form-group">
-        @Html.LabelFor(x=>x.Title)
+        @Html.LabelFor(x=> x.Title)
 
         @if(Model.CanEdit)
         {
@@ -54,19 +55,13 @@
 
     @* Публичность *@
     <div class="form-group">
-        @Html.LabelFor(x => x.IsPublic)
-
         @if (Model.CanEdit)
         {
-            @Html.CheckBoxFor(x => x.IsPublic, new { @Class = "form-control" })
+            @Html.CheckBoxFor(x => x.IsPublic) @NotesEditUIResources.IsPublic
         }
         else
         {
-            @Html.CheckBoxFor(x => x.IsPublic, new
-            {
-                @Class = "form-control",
-                @Disabled = "disabled"
-            })
+            @Html.CheckBoxFor(x => x.IsPublic, new { @Disabled = "disabled" }) @NotesEditUIResources.IsPublic
         }
     </div>
 

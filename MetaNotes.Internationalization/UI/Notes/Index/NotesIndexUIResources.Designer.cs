@@ -79,11 +79,38 @@ namespace MetaNotes.Internationalization.UI.Notes.Index {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filter.
+        /// </summary>
+        public static string FilterTitle {
+            get {
+                return ResourceManager.GetString("FilterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is public.
+        /// </summary>
+        public static string IsPublic_Filter {
+            get {
+                return ResourceManager.GetString("IsPublic_Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is public.
         /// </summary>
         public static string IsPublic_Grid {
             get {
                 return ResourceManager.GetString("IsPublic_Grid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Key phrase.
+        /// </summary>
+        public static string KeyPhrase_Filter {
+            get {
+                return ResourceManager.GetString("KeyPhrase_Filter", resourceCulture);
             }
         }
         
@@ -111,6 +138,15 @@ namespace MetaNotes.Internationalization.UI.Notes.Index {
         public static string OwnerId_Grid {
             get {
                 return ResourceManager.GetString("OwnerId_Grid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string SearchBtn_Filter {
+            get {
+                return ResourceManager.GetString("SearchBtn_Filter", resourceCulture);
             }
         }
         

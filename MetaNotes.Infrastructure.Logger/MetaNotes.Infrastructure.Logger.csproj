@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D117BE69-338F-40B8-A420-B7F2D2F8323E}</ProjectGuid>
+    <ProjectGuid>{96007F23-2E6B-4F2B-AB4D-0B5686341F94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MetaNotes.Services</RootNamespace>
-    <AssemblyName>MetaNotes.Services</AssemblyName>
+    <RootNamespace>MetaNotes.Infrastructure.Logger</RootNamespace>
+    <AssemblyName>MetaNotes.Infrastructure.Logger</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,13 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logger\ILogger.cs" />
-    <Compile Include="Logger\ILogParser.cs" />
-    <Compile Include="Logger\ILogReader.cs" />
-    <Compile Include="Logger\LogMessage.cs" />
-    <Compile Include="Logger\LogType.cs" />
-    <Compile Include="Mapping\IMapper.cs" />
+    <Compile Include="LogParser.cs" />
+    <Compile Include="LogReader.cs" />
+    <Compile Include="NlogLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MetaNotes.Common\MetaNotes.Common.csproj">
+      <Project>{4ca5e79b-e14e-43bf-859f-6c045117047d}</Project>
+      <Name>MetaNotes.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Services\MetaNotes.Services.csproj">
+      <Project>{d117be69-338f-40b8-a420-b7f2d2f8323e}</Project>
+      <Name>MetaNotes.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,6 +17,8 @@
 }
 
 <form role="form" class="col-xs-6" action="@Url.Action("Edit","Notes")" method="post">
+    @Html.AntiForgeryToken()
+
     @* Заголовок *@
     <div class="form-group">
         @Html.LabelFor(x => x.Title)

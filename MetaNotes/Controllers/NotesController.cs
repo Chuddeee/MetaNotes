@@ -1,4 +1,5 @@
-﻿using MetaNotes.Business.Services;
+﻿using MetaNotes.Attributes;
+using MetaNotes.Business.Services;
 using MetaNotes.Common;
 using MetaNotes.Internationalization.UI.Notes.Edit;
 using MetaNotes.Models;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 namespace MetaNotes.Controllers
 {
     [Authorize]
+    [LogAction]
     public class NotesController : BaseController
     {
         [HttpGet]
@@ -45,7 +47,7 @@ namespace MetaNotes.Controllers
                 });
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(EditNoteModel request)
         {
             if (!ModelState.IsValid)

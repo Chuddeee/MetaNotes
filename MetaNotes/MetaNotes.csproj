@@ -93,6 +93,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -163,6 +166,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attributes\DenyAuthorizedAttribute.cs" />
+    <Compile Include="Attributes\LogActionAttribute.cs" />
     <Compile Include="Attributes\RequiredFieldAttribute.cs" />
     <Compile Include="Authentication\ApplicationUser.cs" />
     <Compile Include="Authentication\UserManager.cs" />
@@ -196,6 +200,12 @@
     <Content Include="Content\Styles\bootstrap\bootstrap-theme.css.map" />
     <Content Include="Content\Styles\bootstrap\bootstrap.css.map" />
     <Content Include="Grid.mvc.readme" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -258,6 +268,10 @@
     <ProjectReference Include="..\MetaNotes.Internationalization\MetaNotes.Internationalization.csproj">
       <Project>{01c9e4ef-7698-49e3-829a-b7e5d3fdbb60}</Project>
       <Name>MetaNotes.Internationalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Services\MetaNotes.Services.csproj">
+      <Project>{d117be69-338f-40b8-a420-b7f2d2f8323e}</Project>
+      <Name>MetaNotes.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

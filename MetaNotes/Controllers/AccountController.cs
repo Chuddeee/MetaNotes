@@ -1,6 +1,7 @@
 ﻿using MetaNotes.Attributes;
 using MetaNotes.Business.Services;
 using MetaNotes.Models;
+using MetaNotes.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using System;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MetaNotes.Controllers
 {    
+    [LogAction]
     public class AccountController : Controller
     {
         #region Поля, конструктор
@@ -17,10 +19,12 @@ namespace MetaNotes.Controllers
         private readonly UserManager<ApplicationUser> _userManager = 
             new UserManager<ApplicationUser>(new UserStore());
         private readonly ICommand<FindUserArgs, FindUserResult> _findUserCommand;
+        private readonly ILogger _logger;
 
-        public AccountController(ICommand<FindUserArgs, FindUserResult> findUserCommand)
+        public AccountController(ICommand<FindUserArgs, FindUserResult> findUserCommand, ILogger logger)
         {
             _findUserCommand = findUserCommand;
+            _logger = logger;
         }
 
         #endregion
@@ -29,7 +33,7 @@ namespace MetaNotes.Controllers
 
         [DenyAuthorized, HttpGet]
         public async Task<ActionResult> Index()
-        {
+        {           
             return View(new SignInModel());
         }
 

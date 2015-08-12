@@ -265,6 +265,10 @@
       <Project>{773f1894-fe00-466f-aab1-3d5171169da8}</Project>
       <Name>MetaNotes.Infrastructure.DependencyResolution</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Infrastructure.Logger\MetaNotes.Infrastructure.Logger.csproj">
+      <Project>{96007f23-2e6b-4f2b-ab4d-0b5686341f94}</Project>
+      <Name>MetaNotes.Infrastructure.Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetaNotes.Internationalization\MetaNotes.Internationalization.csproj">
       <Project>{01c9e4ef-7698-49e3-829a-b7e5d3fdbb60}</Project>
       <Name>MetaNotes.Internationalization</Name>

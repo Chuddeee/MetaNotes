@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogParser.cs" />
-    <Compile Include="LogReader.cs" />
+    <Compile Include="DefaultLogParser.cs" />
+    <Compile Include="DefaultLogReader.cs" />
     <Compile Include="NlogLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

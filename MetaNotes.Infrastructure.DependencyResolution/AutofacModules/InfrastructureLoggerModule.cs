@@ -14,6 +14,8 @@ namespace MetaNotes.Infrastructure.DependencyResolution
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<NlogLogger>().As<ILogger>();
+            builder.RegisterType<DefaultLogParser>().As<ILogMessageParser>();
+            builder.RegisterType<DefaultLogReader>().As<ILogReader>();
         }
     }
 }

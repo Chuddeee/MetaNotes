@@ -26,7 +26,7 @@ namespace MetaNotes.Attributes
             var actionName = routeData.Values["action"];
             var message = String.Format("Userid = {0} controller:{1} action:{2}", UserId,
                 controllerName, actionName);
-            logger.Info(message);
+            logger.Info(message, new Exception("sadfsdfsdf",new Exception("sdfdsf")));
         }
 
         protected Guid? UserId

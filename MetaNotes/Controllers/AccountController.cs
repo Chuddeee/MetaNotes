@@ -1,5 +1,6 @@
 ﻿using MetaNotes.Attributes;
 using MetaNotes.Business.Services;
+using MetaNotes.Infrastructure.Logger;
 using MetaNotes.Models;
 using MetaNotes.Services;
 using Microsoft.AspNet.Identity;
@@ -20,11 +21,15 @@ namespace MetaNotes.Controllers
             new UserManager<ApplicationUser>(new UserStore());
         private readonly ICommand<FindUserArgs, FindUserResult> _findUserCommand;
         private readonly ILogger _logger;
+        private readonly ILogReader _logReader;
 
-        public AccountController(ICommand<FindUserArgs, FindUserResult> findUserCommand, ILogger logger)
+        public AccountController(
+            ICommand<FindUserArgs, FindUserResult> findUserCommand, 
+            ILogger logger, ILogReader logReader)
         {
             _findUserCommand = findUserCommand;
             _logger = logger;
+            _logReader = logReader;
         }
 
         #endregion
@@ -33,7 +38,12 @@ namespace MetaNotes.Controllers
 
         [DenyAuthorized, HttpGet]
         public async Task<ActionResult> Index()
-        {           
+        {
+            var logs = _logReader.ReadLogs(@"E:\Тестовые задания\Метаквотс Софтвер\MetaNotes\MetaNotes\logs\2015-08-12\logs.log");
+            foreach(var log in logs)
+            {
+                var z = log;
+            }
             return View(new SignInModel());
         }
 

@@ -6,9 +6,15 @@ using MetaNotes.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
+using System.Web.Security;
+using System.Security.Principal;
+using MetaNotes.Common;
+using MetaNotes.Core.Entities;
 
 namespace MetaNotes.Controllers
 {    
@@ -39,11 +45,6 @@ namespace MetaNotes.Controllers
         [DenyAuthorized, HttpGet]
         public async Task<ActionResult> Index()
         {
-            var logs = _logReader.ReadLogs(@"E:\Тестовые задания\Метаквотс Софтвер\MetaNotes\MetaNotes\logs\2015-08-12\logs.log");
-            foreach(var log in logs)
-            {
-                var z = log;
-            }
             return View(new SignInModel());
         }
 
@@ -65,7 +66,7 @@ namespace MetaNotes.Controllers
                 return View("Index", request);
             }
 
-            await SignIn(cmdResult.User.Login, cmdResult.User.Id);
+            await SignIn(cmdResult.User);
             return RedirectToAction("Index", "Notes");
         }
 
@@ -77,7 +78,7 @@ namespace MetaNotes.Controllers
             return RedirectToAction("Index", "Account");
         }
 
-        private async Task SignIn(string login, Guid userId)
+        private async Task SignIn(User user)
         {            
             var manager = HttpContext.GetOwinContext().Authentication;
             manager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
@@ -85,11 +86,13 @@ namespace MetaNotes.Controllers
             var identity = await _userManager.CreateIdentityAsync(
                 new ApplicationUser
                 {
-                    UserName = login,
-                    Id = userId.ToString()
+                    UserName = user.Login,
+                    Id = user.Id.ToString()
                 },
                 DefaultAuthenticationTypes.ApplicationCookie);
 
+            Session[KeysConstants.UserSessionKey] = user;
+            HttpContext.User = new GenericPrincipal(identity, new string[] { });
             manager.SignIn(new AuthenticationProperties() { IsPersistent = true }, identity);
         }
 	}

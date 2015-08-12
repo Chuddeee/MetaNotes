@@ -10,5 +10,7 @@ namespace MetaNotes.Common
         public const string SuccessMessageKey = "SuccessMessage";
 
         public const string ErrorMessageKey = "ErrorMessage";
+
+        public const string UserSessionKey = "User";
     }
 }

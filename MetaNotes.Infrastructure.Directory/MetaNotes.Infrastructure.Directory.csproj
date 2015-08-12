@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D117BE69-338F-40B8-A420-B7F2D2F8323E}</ProjectGuid>
+    <ProjectGuid>{860CAA5A-7731-4280-A60F-F503293821BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MetaNotes.Services</RootNamespace>
-    <AssemblyName>MetaNotes.Services</AssemblyName>
+    <RootNamespace>MetaNotes.Infrastructure.Directory</RootNamespace>
+    <AssemblyName>MetaNotes.Infrastructure.Directory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,15 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FilesDirectories\IDirectoryManager.cs" />
-    <Compile Include="FilesDirectories\IFileManager.cs" />
-    <Compile Include="Logger\ILogger.cs" />
-    <Compile Include="Logger\ILogParser.cs" />
-    <Compile Include="Logger\ILogReader.cs" />
-    <Compile Include="Logger\LogMessage.cs" />
-    <Compile Include="Logger\LogType.cs" />
-    <Compile Include="Mapping\IMapper.cs" />
+    <Compile Include="DirectoryManager.cs" />
+    <Compile Include="FileManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MetaNotes.Services\MetaNotes.Services.csproj">
+      <Project>{d117be69-338f-40b8-a420-b7f2d2f8323e}</Project>
+      <Name>MetaNotes.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

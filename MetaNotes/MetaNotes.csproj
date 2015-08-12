@@ -173,17 +173,23 @@
     <Compile Include="Authentication\UserStore.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HeaderController.cs" />
     <Compile Include="Controllers\LogsController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Exceptions\ModelBuilderException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelBuilders\Header\HeaderMenuModelBuiler.cs" />
+    <Compile Include="ModelBuilders\Logs\LogsIndexModelBuilder.cs" />
     <Compile Include="ModelBuilders\Notes\EditNoteModelBuilder.cs" />
     <Compile Include="ModelBuilders\Notes\NotesIndexModelBuilder.cs" />
     <Compile Include="ModelBuilders\Notes\SaveNoteModelBuilder.cs" />
     <Compile Include="ModelBuilders\Notes\SaveNoteModelBuilderResult.cs" />
+    <Compile Include="Models\Header\HeaderMenuModel.cs" />
+    <Compile Include="Models\Header\MenuItemModel.cs" />
     <Compile Include="Models\Login\SignInModel.cs" />
+    <Compile Include="Models\Logs\LogsIndexModel.cs" />
     <Compile Include="Models\Note\EditNoteModel.cs" />
     <Compile Include="Models\Note\NotesFilterModel.cs" />
     <Compile Include="Models\Note\NotesIndexModel.cs" />
@@ -219,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Header\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />

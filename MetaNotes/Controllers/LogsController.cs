@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using MetaNotes.ModelBuilders;
+using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace MetaNotes.Controllers
@@ -9,7 +11,9 @@ namespace MetaNotes.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            return View();
+            var builder = DependencyResolver.Current.GetService<LogsIndexModelBuilder>();
+            var model = builder.Build(DateTime.Now);
+            return View(model);
         }
 	}
 }

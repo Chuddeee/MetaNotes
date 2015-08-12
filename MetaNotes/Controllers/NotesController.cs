@@ -7,6 +7,9 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using System.Security.Principal;
+using MetaNotes.Core.Entities;
 
 namespace MetaNotes.Controllers
 {
@@ -17,6 +20,8 @@ namespace MetaNotes.Controllers
         [HttpGet]
         public async Task<ActionResult> Index(NotesFilterModel filter = null)
         {
+            var user = Session[KeysConstants.UserSessionKey] as User;
+
             var a = ModelState;
             var builder = DependencyResolver.Current.GetService<NotesIndexModelBuilder>();
             var model = await builder.Build(UserId.Value, filter);

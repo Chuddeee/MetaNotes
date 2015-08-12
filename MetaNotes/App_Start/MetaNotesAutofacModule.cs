@@ -1,8 +1,5 @@
 ﻿using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using MetaNotes.ModelBuilders;
 
 namespace MetaNotes.App_Start
 {
@@ -13,6 +10,7 @@ namespace MetaNotes.App_Start
             builder.RegisterType<NotesIndexModelBuilder>().AsSelf();
             builder.RegisterType<EditNoteModelBuilder>().AsSelf();
             builder.RegisterType<SaveNoteModelBuilder>().AsSelf();
+            builder.RegisterType<LogsIndexModelBuilder>().AsSelf();
         }
     }
 }

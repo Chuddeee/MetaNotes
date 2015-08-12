@@ -1,6 +1,35 @@
-﻿@{
+﻿@model LogsIndexModel
+@{
     ViewBag.Title = "Логи";
     Layout = "~/Views/Shared/Layouts/MainLayout.cshtml";
 }
 
-<div>Логи</div>
+<div>Логи за @Model.Date.ToString() (UTC)</div>
+
+@if(!Model.Messages.Any())
+{
+    @("Отсутствуют сообщения")
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="150px">Тип сообщения</th>
+                <th width="200px">Дата</th>
+                <th>Сообщение</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var msg in Model.Messages)
+            {
+                <tr class="@Model.TypeToClassConverter(msg.Type)">
+                    <td>@msg.Type</td>
+                    <td>@msg.Date.ToString() (UTC)</td>
+                    <td>@msg.Message</td>
+                </tr>
+            }
+        </tbody>        
+    </table>
+}
+    

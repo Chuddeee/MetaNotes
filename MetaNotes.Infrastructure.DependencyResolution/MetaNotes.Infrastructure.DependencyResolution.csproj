@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="AutofacModules\BusinessServicesModule.cs" />
     <Compile Include="AutofacModules\InfrastructureDataModule.cs" />
+    <Compile Include="AutofacModules\InfrastructureDirectoryModule.cs" />
     <Compile Include="AutofacModules\InfrastructureLoggerModule.cs" />
     <Compile Include="AutofacModules\ServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +80,10 @@
     <ProjectReference Include="..\MetaNotes.Infrastructure.Data.EF\MetaNotes.Infrastructure.Data.EF.csproj">
       <Project>{7e2ba1e2-4ce0-4e42-be4a-8dd23f9885ea}</Project>
       <Name>MetaNotes.Infrastructure.Data.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaNotes.Infrastructure.Directory\MetaNotes.Infrastructure.Directory.csproj">
+      <Project>{860caa5a-7731-4280-a60f-f503293821be}</Project>
+      <Name>MetaNotes.Infrastructure.Directory</Name>
     </ProjectReference>
     <ProjectReference Include="..\MetaNotes.Infrastructure.Logger\MetaNotes.Infrastructure.Logger.csproj">
       <Project>{96007f23-2e6b-4f2b-ab4d-0b5686341f94}</Project>

@@ -100,6 +100,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountIndexUIResources.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Layout\MainLayoutResources.ru.Designer.cs">
+      <DependentUpon>MainLayoutResources.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\Layout\MainLayoutResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainLayoutResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Notes\Edit\NotesEditUIResources.ru.Designer.cs">
       <DependentUpon>NotesEditUIResources.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -169,6 +179,14 @@
     <EmbeddedResource Include="UI\Account\AccountIndexUIResources.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AccountIndexUIResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Layout\MainLayoutResources.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainLayoutResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Layout\MainLayoutResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainLayoutResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Notes\Edit\NotesEditUIResources.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

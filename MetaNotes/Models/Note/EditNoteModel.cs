@@ -1,4 +1,6 @@
-﻿using MetaNotes.Core.Entities;
+﻿using MetaNotes.Attributes.Validation;
+using MetaNotes.Core.Entities;
+using MetaNotes.Internationalization.Errors.Shared;
 using MetaNotes.Internationalization.UI.Notes.Edit;
 using System.ComponentModel.DataAnnotations;
 
@@ -10,12 +12,12 @@ namespace MetaNotes.Models
 
         [Display(ResourceType = typeof(NotesEditUIResources), Name="TitleLabel")]
         [RequiredField]
-        [MaxLength(Note.TitleMaxLength)]
+        [MaxLengthField(Note.TitleMaxLength)]        
         public string Title { get; set; }
 
         [RequiredField]
         [Display(ResourceType = typeof(NotesEditUIResources), Name = "BodyLabel")]
-        [MaxLength(Note.BodyMaxLength)]
+        [MaxLengthField(Note.BodyMaxLength)]   
         public string Body { get; set; }
 
         public bool IsPublic { get; set; }

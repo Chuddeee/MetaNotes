@@ -165,9 +165,11 @@
     <Compile Include="App_Start\MetaNotesAutofacModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Attributes\DenyAuthorizedAttribute.cs" />
-    <Compile Include="Attributes\LogActionAttribute.cs" />
-    <Compile Include="Attributes\RequiredFieldAttribute.cs" />
+    <Compile Include="Attributes\Action\DenyAuthorizedAttribute.cs" />
+    <Compile Include="Attributes\Action\LogActionAttribute.cs" />
+    <Compile Include="Attributes\Validation\MinLengthFieldAttribute.cs" />
+    <Compile Include="Attributes\Validation\MaxLengthFieldAttribute.cs" />
+    <Compile Include="Attributes\Validation\RequiredFieldAttribute.cs" />
     <Compile Include="Authentication\ApplicationUser.cs" />
     <Compile Include="Authentication\UserManager.cs" />
     <Compile Include="Authentication\UserStore.cs" />
@@ -195,7 +197,6 @@
     <Compile Include="Models\Note\NotesFilterModel.cs" />
     <Compile Include="Models\Note\NotesIndexModel.cs" />
     <Compile Include="Models\Note\NoteTableModel.cs" />
-    <Compile Include="Models\Shared\AjaxResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

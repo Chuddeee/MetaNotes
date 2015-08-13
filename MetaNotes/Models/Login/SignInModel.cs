@@ -1,4 +1,5 @@
-﻿using MetaNotes.Common;
+﻿using MetaNotes.Attributes.Validation;
+using MetaNotes.Common;
 using MetaNotes.Core.Entities;
 using MetaNotes.Internationalization.Errors.Account;
 using MetaNotes.Internationalization.UI.Account;
@@ -11,8 +12,8 @@ namespace MetaNotes.Models
     {
         [RequiredField]
         [Display(ResourceType = typeof(AccountIndexUIResources), Name = "Login_Title")]
-        [MaxLength(User.LoginMaxLength)]
-        [MinLength(User.LoginMinLength)]
+        [MaxLengthField(User.LoginMaxLength)]
+        [MinLengthField(User.LoginMinLength)]
         public string Login { get; set; }
 
 
@@ -21,8 +22,8 @@ namespace MetaNotes.Models
         [RegularExpression(RegexConstants.Password, 
             ErrorMessageResourceType = typeof(AccountErrorsResources), 
             ErrorMessageResourceName = "PasswordRegex")]
-        [MaxLength(LengthConstants.PasswordMax)]
-        [MinLength(LengthConstants.PasswordMin)]
+        [MaxLengthField(LengthConstants.PasswordMax)]
+        [MinLengthField(LengthConstants.PasswordMin)]
         public string Password { get; set; }
     }
 }

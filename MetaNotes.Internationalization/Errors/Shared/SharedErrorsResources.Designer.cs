@@ -61,6 +61,24 @@ namespace MetaNotes.Internationalization.Errors.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For the field {0} max length is {1} symbols.
+        /// </summary>
+        public static string MaxLength {
+            get {
+                return ResourceManager.GetString("MaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For the field {0} min length is {1} symbols.
+        /// </summary>
+        public static string MinLength {
+            get {
+                return ResourceManager.GetString("MinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fill in the field {0}.
         /// </summary>
         public static string Required {

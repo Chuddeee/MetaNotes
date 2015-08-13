@@ -124,6 +124,15 @@ namespace MetaNotes.Internationalization.UI.Notes.Index {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to no.
+        /// </summary>
+        public static string NotPublicText_grid1 {
+            get {
+                return ResourceManager.GetString("NotPublicText_grid1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not public.
         /// </summary>
         public static string OnlyNotPublic {
@@ -147,6 +156,15 @@ namespace MetaNotes.Internationalization.UI.Notes.Index {
         public static string OwnerId_Grid {
             get {
                 return ResourceManager.GetString("OwnerId_Grid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to yes.
+        /// </summary>
+        public static string PublicText_grid {
+            get {
+                return ResourceManager.GetString("PublicText_grid", resourceCulture);
             }
         }
         

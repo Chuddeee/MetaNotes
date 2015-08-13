@@ -1,15 +1,13 @@
 ﻿using MetaNotes.Attributes;
 using MetaNotes.Business.Services;
 using MetaNotes.Common;
+using MetaNotes.Internationalization.UI.Notes.Delete;
 using MetaNotes.Internationalization.UI.Notes.Edit;
 using MetaNotes.Models;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using System.Security.Principal;
-using MetaNotes.Core.Entities;
 
 namespace MetaNotes.Controllers
 {
@@ -17,14 +15,28 @@ namespace MetaNotes.Controllers
     [LogAction]
     public class NotesController : BaseController
     {
+        /*
+         Примечание по поводу модел билдеров - можно было бы по аналогии с тем как реализовал команды
+         * сделать generic интерфейс, определить интерфейс IViewModel и так далее, сигнатура
+         * методов build сильно различается - где-то нужны параметры, где-то нет, где-то 
+         * методы асинхронные, где-то нет, поэтому не стал усложнять. Как вариант можно было бы для
+         * каждого билдера просто определить свой специфический интерфейс. В целом логика построения моделей
+         * уже выделена в отдельные классы и при необходимости можно без проблем перевести все это дело на DI.
+         * 
+         * Также я бы создал фабрики для команд и билдеров, чтобы не надо было засорять конструктор контроллера
+         * кучей зависимостей, а можно было бы инжектить только фабрики, которые бы могли создавать эти самые команды и 
+         * билдеры.
+         * 
+         * По поводу ошибок можно было бы организовать единую схему работы с ошибками, выделить перечисления
+         * с ошибками и менеджер ошибок (даже есть наработки), но к сожалению времени было мало и 
+         * поднять полноценный проект я бы просто не успел
+         */
+
         [HttpGet]
         public async Task<ActionResult> Index(NotesFilterModel filter = null)
         {
-            var user = Session[KeysConstants.UserSessionKey] as User;
-
-            var a = ModelState;
             var builder = DependencyResolver.Current.GetService<NotesIndexModelBuilder>();
-            var model = await builder.Build(UserId.Value, filter);
+            var model = await builder.Build(GetUserId().Value, filter);
             return View(model);
         }
 
@@ -37,7 +49,7 @@ namespace MetaNotes.Controllers
 
                 try
                 {
-                    var model = await builder.Build(UserId.Value, noteId.Value);
+                    var model = await builder.Build(GetUserId().Value, noteId.Value);
                     return View(model);
                 }
                 catch (ModelBuilderException ex)
@@ -62,7 +74,7 @@ namespace MetaNotes.Controllers
             }
 
             var builder = DependencyResolver.Current.GetService<SaveNoteModelBuilder>();
-            var result = await builder.Build(UserId.Value, request);
+            var result = await builder.Build(GetUserId().Value, request);
 
             if (result.IsSuccess)
             {
@@ -75,7 +87,7 @@ namespace MetaNotes.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(int noteId)
         {
             var command = DependencyResolver.Current
@@ -84,19 +96,19 @@ namespace MetaNotes.Controllers
             var args = new DeleteNoteArgs
             {
                 NoteId = noteId,
-                UserId = UserId.Value
+                UserId = GetUserId().Value
             };
 
             var result = await command.Execute(args);
-            var model = new AjaxResult() { IsSuccess = result.IsSuccess };
 
             if (result.IsSuccess)
             {
-                model.Message = NotesEditUIResources.NoteSuccessDeleted;
+                TempData[KeysConstants.SuccessMessageKey] = NotesDeleteUIResources.SuccessMsg;
+                return RedirectToAction("Index", "Notes");
             }
-            else model.Message = result.ErrorMessage;
 
-            return Json(model);
+            TempData[KeysConstants.ErrorMessageKey] = result.ErrorMessage;
+            return RedirectToAction("Edit", "Notes", new { noteId = noteId });
         }
 	}
 }

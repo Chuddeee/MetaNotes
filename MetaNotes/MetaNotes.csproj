@@ -176,6 +176,7 @@
     <Compile Include="Controllers\HeaderController.cs" />
     <Compile Include="Controllers\LogsController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
+    <Compile Include="Converters\BoolToStringGridConverter.cs" />
     <Compile Include="Exceptions\ModelBuilderException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,7 +226,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Header\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
@@ -240,6 +240,7 @@
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\Notes\Partial\Filter.cshtml" />
+    <Content Include="Views\Header\HeaderPartial.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

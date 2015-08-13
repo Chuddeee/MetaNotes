@@ -1,19 +1,14 @@
 ﻿using MetaNotes.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Microsoft.AspNet.Identity;
 
 namespace MetaNotes.Attributes
 {
     public class LogActionAttribute : ActionFilterAttribute
     {
-        /*public override void OnActionExecuted(ActionExecutedContext filterContext)
-        {
-            Log("AfterExecuting", filterContext.RouteData);
-        }*/
-
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             Log(filterContext.RouteData);

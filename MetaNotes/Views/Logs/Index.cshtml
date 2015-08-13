@@ -1,4 +1,5 @@
 ﻿@model LogsIndexModel
+@using MetaNotes.Internationalization.UI.Logs
 @{
     ViewBag.Title = "Логи";
     Layout = "~/Views/Shared/Layouts/MainLayout.cshtml";
@@ -15,9 +16,9 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th width="150px">Тип сообщения</th>
-                <th width="200px">Дата</th>
-                <th>Сообщение</th>
+                <th width="150px">@LogsIndexUIResources.LogType_ColumnTitle</th>
+                <th width="200px">@LogsIndexUIResources.Date_ColumnTitle</th>
+                <th>@LogsIndexUIResources.Message_ColumnTitle</th>
             </tr>
         </thead>
         <tbody>

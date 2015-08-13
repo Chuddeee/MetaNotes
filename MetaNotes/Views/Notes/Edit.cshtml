@@ -16,63 +16,73 @@
     <div class="alert alert-success">@TempData[KeysConstants.SuccessMessageKey]</div>
 }
 
-<form role="form" class="col-xs-6" action="@Url.Action("Edit","Notes")" method="post">
-    @Html.AntiForgeryToken()
+<div class="col-xs-6">
+    <form role="form" action="@Url.Action("Edit","Notes")" method="post">
+        @Html.AntiForgeryToken()
 
-    @* Заголовок *@
-    <div class="form-group">
-        @Html.LabelFor(x => x.Title)
+        @* Заголовок *@
+        <div class="form-group">
+            @Html.LabelFor(x => x.Title)
 
-        @if (Model.CanEdit)
-        {
-            @Html.TextBoxFor(x => x.Title, new { @Class = "form-control" })
-            @Html.ValidationMessageFor(x => x.Title)
-        }
-        else
-        {
-            @Html.TextBoxFor(x => x.Title, new
+            @if (Model.CanEdit)
+            {
+                @Html.TextBoxFor(x => x.Title, new { @Class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Title)
+            }
+            else
+            {
+                @Html.TextBoxFor(x => x.Title, new
             {
                 @Class = "form-control",
                 @Disabled = "disabled"
             })
-        }
-    </div>
+            }
+        </div>
 
-    @* Тело *@
-    <div class="form-group">
-        @Html.LabelFor(x => x.Body)
+        @* Тело *@
+        <div class="form-group">
+            @Html.LabelFor(x => x.Body)
 
-        @if (Model.CanEdit)
-        {
-            @Html.TextAreaFor(x => x.Body, new { @Class = "form-control" })
-            @Html.ValidationMessageFor(x => x.Body)
-        }
-        else
-        {
-            @Html.TextAreaFor(x => x.Body, new
+            @if (Model.CanEdit)
+            {
+                @Html.TextAreaFor(x => x.Body, new { @Class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Body)
+            }
+            else
+            {
+                @Html.TextAreaFor(x => x.Body, new
             {
                 @Class = "form-control",
                 @Disabled = "disabled"
             })
-        }
-    </div>
+            }
+        </div>
 
-    @* Публичность *@
-    <div class="form-group">
+        @* Публичность *@
+        <div class="form-group">
+            @if (Model.CanEdit)
+            {
+                @Html.CheckBoxFor(x => x.IsPublic) @NotesEditUIResources.IsPublic
+            }
+            else
+            {
+                @Html.CheckBoxFor(x => x.IsPublic, new { @Disabled = "disabled" }) @NotesEditUIResources.IsPublic
+            }
+        </div>
+
+        @Html.HiddenFor(x => x.NoteId)
+
         @if (Model.CanEdit)
         {
-            @Html.CheckBoxFor(x => x.IsPublic) @NotesEditUIResources.IsPublic
+            <button type="submit" class="btn btn-default">Сохранить</button>
         }
-        else
-        {
-            @Html.CheckBoxFor(x => x.IsPublic, new { @Disabled = "disabled" }) @NotesEditUIResources.IsPublic
-        }
-    </div>
+    </form>
 
-    @Html.HiddenFor(x => x.NoteId)
-
-    @if (Model.CanEdit)
+    @if(Model.CanDelete)
     {
-        <button type="submit" class="btn btn-default">Сохранить</button>
+        <form action="@Url.Action("Delete","Notes",new { noteId = Model.NoteId })" method="post">
+            @Html.AntiForgeryToken()    
+            <button type="submit" class="btn btn-default">Удалить</button>
+        </form>
     }
-</form>
+</div>

@@ -22,5 +22,7 @@ namespace MetaNotes.Models
 
         /// <summary>Может ли текущий пользователь редактировать заметку</summary>
         public bool CanEdit { get; set; }
+
+        public bool CanDelete { get; set; }
     }
 }

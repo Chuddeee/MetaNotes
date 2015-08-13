@@ -1,0 +1,15 @@
+﻿@model HeaderMenuModel
+
+<ul class="nav navbar-nav">
+    @if(Model.MenuItems!=null)
+    {
+        foreach(var item in Model.MenuItems)
+        {
+            <li>
+                <a href="@Url.Action(item.ActionName, item.ControllerName)">
+                    @item.Name
+                </a>
+            </li>
+        }
+    }
+</ul>

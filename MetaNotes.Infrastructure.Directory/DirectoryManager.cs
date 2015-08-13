@@ -8,7 +8,7 @@ namespace MetaNotes.Infrastructure.Directory
     public class DirectoryManager : IDirectoryManager
     {
         private const string _appDataFolderName = "App_Data";
-        private const string _logsDirectoryName = "logs";
+        private const string _logsDirectoryName = "logfiles";
         private const string _logsDateFormat = "dd-MM-yyyy";
 
         public string GetBaseDirectory()

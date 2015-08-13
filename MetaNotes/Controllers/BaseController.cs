@@ -1,8 +1,6 @@
 ﻿using MetaNotes.Common;
-using MetaNotes.Core.Entities;
-using Microsoft.AspNet.Identity;
 using System;
-using System.Threading.Tasks;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 
@@ -10,28 +8,19 @@ namespace MetaNotes.Controllers
 {
     public abstract class BaseController : Controller
     {
-        protected async Task<User> GetUser()
-        {
-            if(Session[KeysConstants.UserSessionKey]!=null)
-            {
-                return Session[KeysConstants.UserSessionKey] as User;
-            }
-
-            var userId = GetUserId();
-            if (!userId.HasValue)
-                return null;
-        }
-
+        /// <summary>Получает Id текущего юзера</summary>
         protected Guid? GetUserId()
         {
             Guid? result = null;
-            var autentication = HttpContext.GetOwinContext().Authentication;
+            var claimsPrincipal = GetClaimsPrincipal();
 
-            if (autentication != null && autentication.User != null && autentication.User.Identity != null)
+            if (claimsPrincipal != null)
             {
-                var test = autentication.User.Identity as ApplicationUser;
-                var g = new Guid();
-                if (Guid.TryParse(autentication.User.Identity.GetUserId(), out g))
+                var idClaim = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier);
+                var value = idClaim.Maybe(x => x.Value);
+
+                Guid g;
+                if (!value.IsNullOrWhiteSpace() && Guid.TryParse(value, out g))
                 {
                     result = g;
                 }
@@ -39,5 +28,27 @@ namespace MetaNotes.Controllers
 
             return result;
         }        
+
+        /// <summary>Проверяет есть ли у пользователя роль</summary>
+        protected bool UserIsInRole(string role)
+        {
+            bool result = false;
+            var claimsPrincipal = GetClaimsPrincipal();
+
+            if (claimsPrincipal != null)
+            {
+                result = claimsPrincipal.IsInRole(role);
+            }
+
+            return result;
+        }
+
+        private ClaimsPrincipal GetClaimsPrincipal()
+        {
+            return HttpContext
+                .Maybe(x => x.GetOwinContext())
+                .Maybe(x => x.Authentication)
+                .Maybe(x => x.User);
+        }
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MetaNotes.Models.Header
+namespace MetaNotes.Models
 {
     public class HeaderMenuModel
     {

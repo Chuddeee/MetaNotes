@@ -10,6 +10,11 @@
 @Html.Partial("~/Views/Notes/Partial/Filter.cshtml", Model)
 
 <div>
+    @if (TempData[KeysConstants.SuccessMessageKey] != null)
+    {
+        <div class="alert alert-success">@TempData[KeysConstants.SuccessMessageKey]</div>
+    }
+
     <a href="@Url.Action("Edit","Notes")" class="btn btn-default" target="_blank">
         <span class="glyphicon glyphicon-plus"></span>
         @NotesIndexUIResources.AddButton
@@ -35,6 +40,7 @@
 
                 columns.Add(x => x.IsPublic)
                     .Titled(NotesIndexUIResources.IsPublic_Grid)
+                    .RenderValueAs(x => MetaNotes.Converters.BoolToStringGridConverter.GetStr(x.IsPublic))
                     .Sortable(true);
 
                 columns.Add(x => x.UserId)

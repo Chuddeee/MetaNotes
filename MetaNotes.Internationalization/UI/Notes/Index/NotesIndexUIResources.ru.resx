@@ -145,6 +145,10 @@
     <value>Ключевая фраза</value>
     <comment>Лейбл для ключевой фразы в фильтре</comment>
   </data>
+  <data name="NotPublicText_grid1" xml:space="preserve">
+    <value>нет</value>
+    <comment>Текстовое значение для столбца публичный,если он не публичный</comment>
+  </data>
   <data name="OnlyNotPublic" xml:space="preserve">
     <value>Не публичные</value>
     <comment>Значение для выпадающего списка публичности записей</comment>
@@ -156,6 +160,10 @@
   <data name="OwnerId_Grid" xml:space="preserve">
     <value>Создатель</value>
     <comment>Текст столбца таблицы для колонки OwnerId</comment>
+  </data>
+  <data name="PublicText_grid" xml:space="preserve">
+    <value>да</value>
+    <comment>Текстовое значение для столбца публичный,если он публичный</comment>
   </data>
   <data name="SearchBtn_Filter" xml:space="preserve">
     <value>Найти</value>

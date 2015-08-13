@@ -1,25 +1,40 @@
-﻿using MetaNotes.Models.Header;
+﻿using MetaNotes.Internationalization.UI.Layout;
+using MetaNotes.Models;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Web;
 
-namespace MetaNotes.ModelBuilders.Header
+namespace MetaNotes.ModelBuilders
 {
     public class HeaderMenuModelBuiler
     {
-        public async Task<HeaderMenuModel> Build(Guid? userId)
+        public HeaderMenuModel Build(Guid? userId, bool isAdmin)
         {
-            var result = new HeaderMenuModel()
-            {
-                MenuItems = new List<MenuItemModel>()
-            };
+            var items = new List<MenuItemModel>();
+            var result = new HeaderMenuModel() { MenuItems = items };
 
             if (!userId.HasValue)
                 return result;
 
-            //HttpContext.Current.User.isi
-            return null;
+           items.Add(CreateItem("Index", "Notes",MainLayoutResources.Notes_Menu));
+
+            if(isAdmin)
+            {
+                items.Add(CreateItem("Index", "Logs", MainLayoutResources.Logs_Menu));
+            }
+
+            items.Add(CreateItem("Signout", "Account", MainLayoutResources.SignOut_Menu));
+
+            return result;
+        }
+
+        private MenuItemModel CreateItem(string action, string controller, string name)
+        {
+            return new MenuItemModel
+            {
+                ActionName = action,
+                ControllerName = controller,
+                Name = name
+            };
         }
     }
 }

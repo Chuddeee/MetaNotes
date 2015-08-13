@@ -117,60 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddButton" xml:space="preserve">
-    <value>Add new note</value>
-    <comment>Текст для кнопки добавления</comment>
+  <data name="Date_ColumnTitle" xml:space="preserve">
+    <value>Дата</value>
   </data>
-  <data name="AllNotes" xml:space="preserve">
-    <value>All</value>
-    <comment>Значение для выпадающего списка публичности записей</comment>
+  <data name="LogType_ColumnTitle" xml:space="preserve">
+    <value>Тип</value>
   </data>
-  <data name="CreatingDate_Grid" xml:space="preserve">
-    <value>Creating date</value>
-    <comment>Текст столбца таблицы для колонки CreatingDate</comment>
-  </data>
-  <data name="FilterTitle" xml:space="preserve">
-    <value>Filter</value>
-    <comment>Заголовок блока фильтрации</comment>
-  </data>
-  <data name="IsPublic_Filter" xml:space="preserve">
-    <value>Is public</value>
-    <comment>Лейбл для типа записей</comment>
-  </data>
-  <data name="IsPublic_Grid" xml:space="preserve">
-    <value>Is public</value>
-    <comment>Текст столбца таблицы для колонки IsPublic</comment>
-  </data>
-  <data name="KeyPhrase_Filter" xml:space="preserve">
-    <value>Key phrase</value>
-    <comment>Лейбл для ключевой фразы в фильтре</comment>
-  </data>
-  <data name="NotPublicText_grid1" xml:space="preserve">
-    <value>no</value>
-    <comment>Текстовое значение для столбца публичный,если он не публичный</comment>
-  </data>
-  <data name="OnlyNotPublic" xml:space="preserve">
-    <value>Not public</value>
-    <comment>Значение для выпадающего списка публичности записей</comment>
-  </data>
-  <data name="OnlyPublic" xml:space="preserve">
-    <value>Public</value>
-    <comment>Значение для выпадающего списка публичности записей</comment>
-  </data>
-  <data name="OwnerId_Grid" xml:space="preserve">
-    <value>Owner id</value>
-    <comment>Текст столбца таблицы для колонки OwnerId</comment>
-  </data>
-  <data name="PublicText_grid" xml:space="preserve">
-    <value>yes</value>
-    <comment>Текстовое значение для столбца публичный,если он публичный</comment>
-  </data>
-  <data name="SearchBtn_Filter" xml:space="preserve">
-    <value>Search</value>
-    <comment>Текст на кнопке поиска</comment>
-  </data>
-  <data name="TitleColumn_Grid" xml:space="preserve">
-    <value>Title</value>
-    <comment>Текст столбца таблицы для колонки Title</comment>
+  <data name="Message_ColumnTitle" xml:space="preserve">
+    <value>Сообщение</value>
   </data>
 </root>

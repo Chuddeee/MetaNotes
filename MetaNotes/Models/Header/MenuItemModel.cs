@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MetaNotes.Models.Header
+namespace MetaNotes.Models
 {
     /// <summary>Модель для отображения пунктов меню</summary>
     public class MenuItemModel

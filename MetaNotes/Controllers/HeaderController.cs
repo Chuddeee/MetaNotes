@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MetaNotes.Common;
+using MetaNotes.ModelBuilders;
 using System.Web.Mvc;
 
 namespace MetaNotes.Controllers
@@ -10,8 +8,9 @@ namespace MetaNotes.Controllers
     {
         public PartialViewResult Menu()
         {
-           
-            return PartialView("~/Views/Shared/Partial/Header/ParentHeader.cshtml", null);
+            var builder = new HeaderMenuModelBuiler();
+            var model = builder.Build(GetUserId(), UserIsInRole(RolesConstants.AdminRole));
+            return PartialView("~/Views/Header/HeaderPartial.cshtml", model);
         }
 	}
 }

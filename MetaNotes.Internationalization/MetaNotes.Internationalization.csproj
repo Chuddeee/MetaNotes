@@ -110,6 +110,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MainLayoutResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UI\Logs\LogsIndexUIResources.ru.Designer.cs">
+      <DependentUpon>LogsIndexUIResources.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\Logs\LogsIndexUIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogsIndexUIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Notes\Delete\NotesDeleteUIResources.ru.Designer.cs">
+      <DependentUpon>NotesDeleteUIResources.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\Notes\Delete\NotesDeleteUIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotesDeleteUIResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Notes\Edit\NotesEditUIResources.ru.Designer.cs">
       <DependentUpon>NotesEditUIResources.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -187,6 +207,22 @@
     <EmbeddedResource Include="UI\Layout\MainLayoutResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MainLayoutResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Logs\LogsIndexUIResources.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogsIndexUIResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Logs\LogsIndexUIResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogsIndexUIResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Notes\Delete\NotesDeleteUIResources.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotesDeleteUIResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Notes\Delete\NotesDeleteUIResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotesDeleteUIResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Notes\Edit\NotesEditUIResources.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

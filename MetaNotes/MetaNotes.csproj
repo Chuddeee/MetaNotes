@@ -167,9 +167,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attributes\Action\DenyAuthorizedAttribute.cs" />
     <Compile Include="Attributes\Action\LogActionAttribute.cs" />
-    <Compile Include="Attributes\Validation\MinLengthFieldAttribute.cs" />
-    <Compile Include="Attributes\Validation\MaxLengthFieldAttribute.cs" />
-    <Compile Include="Attributes\Validation\RequiredFieldAttribute.cs" />
     <Compile Include="Authentication\ApplicationUser.cs" />
     <Compile Include="Authentication\UserManager.cs" />
     <Compile Include="Authentication\UserStore.cs" />
@@ -191,7 +188,7 @@
     <Compile Include="ModelBuilders\Notes\SaveNoteModelBuilderResult.cs" />
     <Compile Include="Models\Header\HeaderMenuModel.cs" />
     <Compile Include="Models\Header\MenuItemModel.cs" />
-    <Compile Include="Models\Login\SignInModel.cs" />
+    <Compile Include="Models\Account\SignInModel.cs" />
     <Compile Include="Models\Logs\LogsIndexModel.cs" />
     <Compile Include="Models\Note\EditNoteModel.cs" />
     <Compile Include="Models\Note\NotesFilterModel.cs" />
@@ -222,6 +219,11 @@
     <Content Include="Scripts\gridmvc.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
   </ItemGroup>
